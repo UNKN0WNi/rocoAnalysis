@@ -138,16 +138,24 @@ def parse_pokemon_detail(url, pokemon_name):
                 result.update(race_stats)
                 break
 
-        # 4. 提取特性
+        # 4. 提取特性（修复：更宽松的匹配，不依赖"使用"关键字）
+        trait_pattern = re.compile(r'特性[：:]\s*(.+)')
         for i, line in enumerate(lines):
-            if '特性' in line and '使用' not in line:  # 避免匹配到特性描述
-                # 特性名称在下一行
-                if i + 1 < len(lines):
-                    result['特性名称'] = lines[i + 1].strip()
-                # 特性描述在使用后
-                for j in range(i + 1, min(i + 5, len(lines))):
-                    if '使用' in lines[j]:
-                        result['特性描述'] = lines[j].strip()
+            # 尝试匹配 "特性: xxx" 或 "特性 xxx" 格式
+            match = trait_pattern.search(line)
+            if match:
+                result['特性名称'] = match.group(1).strip()
+                break
+
+        # 提取特性描述：从"特性"行向后搜索，找到包含描述性内容的行
+        for i, line in enumerate(lines):
+            if '特性' in line and '特性' == line.strip()[:2]:
+                # 跳过标题行，向后搜索描述内容
+                for j in range(i + 1, min(i + 10, len(lines))):
+                    candidate = lines[j].strip()
+                    # 描述通常是有内容的句子，不为空且不以"特性"开头
+                    if candidate and len(candidate) > 5 and '特性' not in candidate[:2]:
+                        result['特性描述'] = candidate
                         break
                 break
 
@@ -215,22 +223,28 @@ def parse_pokemon_detail(url, pokemon_name):
         return result
 
 
-def save_to_csv(data_list, filename='pokemon_data.csv'):
-    """
-    将数据保存为 CSV 文件
-    """
-    df = pd.DataFrame(data_list)
+COLUMNS_ORDER = [
+    '编号', '名称', '属性', '种族值总和',
+    '生命', '物攻', '魔攻', '物防', '魔防', '速度',
+    '特性名称', '特性描述', '技能列表'
+]
 
-    # 重新排列列顺序
-    columns_order = [
-        '编号', '名称', '属性', '种族值总和',
-        '生命', '物攻', '魔攻', '物防', '魔防', '速度',
-        '特性名称', '特性描述', '技能列表'
-    ]
 
-    df = df[columns_order]
-    df.to_csv(filename, index=False, encoding='utf-8-sig')
-    print(f"\n数据已保存到 {filename}")
+def init_csv(filename='pokemon_data.csv'):
+    """
+    初始化 CSV 文件，写入表头
+    """
+    df = pd.DataFrame(columns=COLUMNS_ORDER)
+    df.to_csv(filename, index=False, encoding='utf-8-sig', mode='w')
+
+
+def append_to_csv(data, filename='pokemon_data.csv'):
+    """
+    流式追加单条数据到 CSV 文件
+    """
+    df = pd.DataFrame([data])
+    df = df[COLUMNS_ORDER]
+    df.to_csv(filename, index=False, encoding='utf-8-sig', mode='a', header=False)
 
 
 def main():
@@ -248,30 +262,36 @@ def main():
         print("未找到精灵列表，请检查网络连接或页面结构")
         return
 
-    # 2. 逐个抓取精灵详情
-    all_data = []
+    # 2. 初始化 CSV 文件
+    filename = 'pokemon_data.csv'
+    init_csv(filename)
+
+    # 3. 逐个抓取精灵详情，流式写入 CSV
+    success_count = 0
 
     for idx, (pokemon_name, url) in enumerate(pokemon_list, 1):
         print(f"\n[{idx}/{len(pokemon_list)}] 正在抓取：{pokemon_name}")
 
         data = parse_pokemon_detail(url, pokemon_name)
-        all_data.append(data)
+
+        # 编号为空说明不是有效精灵，跳过不写入
+        if not data['编号']:
+            print(f"  ⚠ 跳过：未获取到有效编号，可能不是精灵页面")
+            continue
+
+        append_to_csv(data, filename)
+        success_count += 1
 
         # 礼貌性延迟，避免请求过快
         time.sleep(0.5)
 
-    # 3. 保存到 CSV
-    if all_data:
-        save_to_csv(all_data)
-
-        # 统计信息
-        success_count = sum(1 for d in all_data if d['编号'])
-        print(f"\n抓取完成！")
-        print(f"总计：{len(all_data)} 个精灵")
-        print(f"成功：{success_count} 个")
-        print(f"失败：{len(all_data) - success_count} 个")
-    else:
-        print("未抓取到任何数据")
+    # 4. 统计信息
+    fail_count = len(pokemon_list) - success_count
+    print(f"\n抓取完成！")
+    print(f"总计：{len(pokemon_list)} 个链接")
+    print(f"成功写入：{success_count} 个")
+    print(f"跳过（无效）：{fail_count} 个")
+    print(f"数据已保存到 {filename}")
 
 
 if __name__ == '__main__':
