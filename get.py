@@ -80,16 +80,14 @@ def get_and_clean_elf_data():
     # ================= 3. 保存到文件 =================
     try:
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-            # 写入表头
-            f.write("名称\t详情页URL\n")
             for item in final_list:
-                f.write(f"{item['name']}\t{item['url']}\n")
+                f.write(f"{item['url']}\n")
         print(f"✅ 成功！数据已保存至 {OUTPUT_FILE}")
 
         # 打印前10个预览
         print("\n--- 前 10 个预览 ---")
         for item in final_list[:10]:
-            print(f"{item['name']}: {item['url']}")
+            print(item['url'])
 
     except Exception as e:
         print(f"保存文件时出错: {e}")
