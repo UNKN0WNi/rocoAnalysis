@@ -197,129 +197,120 @@ def extract_passive_skill(soup):
 
 
 def extract_evolution_chain(soup, current_pokemon_name):
-    """从页面中提取进化链信息 - 修正版：支持图片+链接格式
+    """从页面中提取进化链信息 - 修正版：直接定位进化链容器
 
-    页面结构示例:
-    进化链
-    <div>
-        <a href="/rocom/喵喵"><img/></a>
-        <span>16</span>
-        <a href="/rocom/喵呜"><img/></a>
-        <span>32</span>
-        <a href="/rocom/魔力猫"><img/></a>
+    页面结构:
+    <div class="rocom_spirit_evolution_box">
+        <p class="rocom_sprite_temp_evolve_text">进化链</p>
+        <div class="rocom_spirit_evolution_1">
+            <a href="/rocom/喵喵" title="喵喵"><img/></a>
+            16
+            <a href="/rocom/喵呜" title="喵呜"><img/></a>
+            32
+            <a href="/rocom/魔力猫" title="魔力猫"><img/></a>
+        </div>
     </div>
     """
     evolution_chain = []
 
-    # 查找"进化链"标题区域
-    headers = soup.find_all(['h2', 'h3', 'h4', 'h5'])
-    evolution_section = None
+    # 方法1: 直接定位进化链容器 class="rocom_spirit_evolution_box"
+    evolution_box = soup.find('div', class_='rocom_spirit_evolution_box')
+    if not evolution_box:
+        # 备选：查找包含"进化链"文本的p标签
+        evolve_p = soup.find('p', class_=lambda x: x and 'evolve_text' in str(x) if x else False)
+        if evolve_p:
+            evolution_box = evolve_p.find_parent('div', class_=lambda x: x and 'spirit_evolution' in str(x) if x else False)
 
-    for header in headers:
-        header_text = header.get_text(strip=True)
-        if '进化链' in header_text:
-            evolution_section = header
-            break
-
-    if not evolution_section:
+    if not evolution_box:
         return evolution_chain
 
-    # 收集进化链区域的所有内容
-    chain_elements = []
-    current = evolution_section.find_next_sibling()
-    stop_tags = ['h2', 'h3', 'h4', 'h5']
-
-    while current and len(chain_elements) < 30:
-        if current.name in stop_tags:
-            break
-        chain_elements.append(current)
-        current = current.find_next_sibling()
-
+    # 收集进化链区域的所有链接
     collected_stages = []
 
-    for elem in chain_elements:
-        # 查找所有 /rocom/ 链接（在进化链区域内）
-        links = elem.find_all('a', href=lambda x: x and '/rocom/' in x and 'Special:' not in x and '文件' not in x)
-        for link in links:
-            href = link.get('href', '')
+    # 查找所有精灵链接（排除导航链接）
+    all_links = evolution_box.find_all('a', href=lambda x: x and '/rocom/' in x)
 
-            # 过滤非精灵链接
-            if any(kw in href for kw in ['Special:', '文件:', 'File:', 'index.php', 'WP:', 'wp']):
-                continue
+    for link in all_links:
+        href = link.get('href', '')
 
-            # 从href中提取精灵名称
-            name_match = re.search(r'/rocom/([^/\?#&]+)', href)
-            if not name_match:
-                continue
+        # 过滤非精灵链接
+        skip_keywords = ['Special:', '文件:', 'File:', 'index.php', 'WP:', 'wp',
+                        '精灵图鉴', '道具图鉴', '技能图鉴', '首页', '攻略', '任务',
+                        '蛋组', '异色', '孵蛋', '阵容', '伤害', '克制', '性格',
+                        '精灵筛选', '道具筛选', '技能筛选', '精灵蛋', '精灵果实',
+                        '家具', '服装', '地区', '副本', '邮件', '地图']
+        if any(kw in href for kw in skip_keywords):
+            continue
 
-            name_encoded = name_match.group(1)
-            name = unquote(name_encoded)
+        # 从href中提取精灵名称
+        name_match = re.search(r'/rocom/([^/\?#&]+)', href)
+        if not name_match:
+            continue
 
-            # 跳过空名称或太长的名称
-            if not name or len(name) > 15:
-                continue
+        name_encoded = name_match.group(1)
+        name = unquote(name_encoded)
 
-            # 查找进化等级：检查链接的下一个兄弟元素
-            level_text = ''
+        # 尝试从title属性获取名称（更准确）
+        title = link.get('title', '')
+        if title and len(title) <= 10:
+            name = title
 
-            # 方法1: 查找下一个兄弟元素中的等级数字
-            next_sibling = link.find_next_sibling()
-            if next_sibling:
-                sibling_text = next_sibling.get_text(strip=True)
-                # 检查是否是纯数字（进化等级）
-                if sibling_text.isdigit():
-                    num = int(sibling_text)
-                    if 1 <= num <= 100:
-                        level_text = sibling_text
+        # 跳过空名称或太长的名称
+        if not name or len(name) > 15:
+            continue
 
-            # 如果没找到，尝试检查父元素的文本
-            if not level_text:
-                parent = link.parent
-                if parent:
-                    parent_text = parent.get_text()
-                    # 在父元素文本中查找数字（排除链接本身）
-                    # 移除链接文本
-                    link_text_in_parent = link.get_text()
-                    if link_text_in_parent:
-                        search_text = parent_text.replace(link_text_in_parent, '')
-                    else:
-                        # 链接文本为空（只有图片），从href提取名称
-                        search_text = parent_text.replace(name, '')
+        # 查找进化等级：检查链接后面的文本
+        level_text = ''
 
-                    # 查找数字
-                    level_match = re.search(r'(?<!\d)(\d{1,3})(?!\d)', search_text)
-                    if level_match:
-                        num = int(level_match.group(1))
-                        if 1 <= num <= 100:
-                            level_text = level_match.group(1)
+        # 获取链接后面的所有文本（直到下一个链接或段落结束）
+        next_elements = []
+        sibling = link.find_next_sibling()
+        while sibling:
+            if sibling.name == 'a':  # 遇到下一个链接就停止
+                break
+            # 获取文本内容
+            text = sibling.get_text(strip=True)
+            if text:
+                next_elements.append(text)
+            sibling = sibling.find_next_sibling()
 
-            # 检查是否是当前精灵
-            stage_type = 'unknown'
-            if name == current_pokemon_name:
-                stage_type = 'current'
-            elif len(collected_stages) == 0:
-                stage_type = 'first'
-            else:
-                stage_type = 'later'
+        # 在后续文本中查找等级数字
+        combined_text = ' '.join(next_elements)
+        if combined_text:
+            # 查找独立的数字
+            level_match = re.search(r'(?<!\d)(\d{1,3})(?!\d)', combined_text)
+            if level_match:
+                num = int(level_match.group(1))
+                if 1 <= num <= 100:
+                    level_text = level_match.group(1)
 
-            collected_stages.append({
-                'name': name,
-                'url': 'https://wiki.biligame.com/rocom/' + name_encoded,
-                'level': level_text,
-                'stage': stage_type
-            })
+        # 检查是否是当前精灵
+        stage_type = 'unknown'
+        if name == current_pokemon_name:
+            stage_type = 'current'
+        elif len(collected_stages) == 0:
+            stage_type = 'first'
+        else:
+            stage_type = 'later'
 
-    # 方法2: 如果还没找到，使用正则从页面文本提取（兜底方案）
+        collected_stages.append({
+            'name': name,
+            'url': 'https://wiki.biligame.com/rocom/' + name_encoded,
+            'level': level_text,
+            'stage': stage_type
+        })
+
+    # 方法2: 如果方法1失败，使用正则从进化链容器文本提取
     if not collected_stages:
-        chain_text = '\n'.join(elem.get_text() for elem in chain_elements)
+        box_text = evolution_box.get_text()
 
-        # 匹配 /rocom/精灵名 模式
-        href_pattern = r'/rocom/([^\s\)\("\']+)'
-        href_matches = re.findall(href_pattern, chain_text)
+        # 匹配所有 /rocom/精灵名 模式
+        href_pattern = r'/rocom/([^\s\)"\']+)'
+        href_matches = re.findall(href_pattern, box_text)
 
         prev_pos = -1
         for href_match in href_matches:
-            if any(kw in href_match for kw in ['Special', '文件', 'File', 'index.php']):
+            if any(kw in href_match for kw in ['Special', '文件', 'File', 'index.php', '精灵图鉴', '首页']):
                 continue
 
             name = unquote(href_match)
@@ -328,14 +319,13 @@ def extract_evolution_chain(soup, current_pokemon_name):
 
             # 查找这个精灵后面的等级数字
             level_text = ''
-            pos = chain_text.find('/rocom/' + href_match, prev_pos + 1)
+            pos = box_text.find('/rocom/' + href_match, prev_pos + 1)
             if pos != -1:
-                # 查找后续100字符内是否有数字
+                # 查找后续150字符内是否有数字
                 search_range = 150
-                end_pos = min(pos + search_range, len(chain_text))
-                nearby_text = chain_text[pos:end_pos]
+                end_pos = min(pos + search_range, len(box_text))
+                nearby_text = box_text[pos:end_pos]
 
-                # 查找连续的数字
                 level_match = re.search(r'(?<!\d)(\d{1,3})(?!\d)', nearby_text)
                 if level_match:
                     num = int(level_match.group(1))
