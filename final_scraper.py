@@ -197,35 +197,20 @@ def extract_passive_skill(soup):
 
 
 def extract_evolution_chain(soup, current_pokemon_name):
-    """从页面中提取进化链信息 - 修正版：直接定位进化链容器
-
-    页面结构:
-    <div class="rocom_spirit_evolution_box">
-        <p class="rocom_sprite_temp_evolve_text">进化链</p>
-        <div class="rocom_spirit_evolution_1">
-            <a href="/rocom/喵喵" title="喵喵"><img/></a>
-            16
-            <a href="/rocom/喵呜" title="喵呜"><img/></a>
-            32
-            <a href="/rocom/魔力猫" title="魔力猫"><img/></a>
-        </div>
-    </div>
+    """从页面中提取进化链信息 - 只返回名字列表
     """
     evolution_chain = []
+    seen = set()  # 用于去重
 
-    # 方法1: 直接定位进化链容器 class="rocom_spirit_evolution_box"
+    # 直接定位进化链容器 class="rocom_spirit_evolution_box"
     evolution_box = soup.find('div', class_='rocom_spirit_evolution_box')
     if not evolution_box:
-        # 备选：查找包含"进化链"文本的p标签
         evolve_p = soup.find('p', class_=lambda x: x and 'evolve_text' in str(x) if x else False)
         if evolve_p:
             evolution_box = evolve_p.find_parent('div', class_=lambda x: x and 'spirit_evolution' in str(x) if x else False)
 
     if not evolution_box:
         return evolution_chain
-
-    # 收集进化链区域的所有链接
-    collected_stages = []
 
     # 查找所有精灵链接（排除导航链接）
     all_links = evolution_box.find_all('a', href=lambda x: x and '/rocom/' in x)
@@ -250,7 +235,7 @@ def extract_evolution_chain(soup, current_pokemon_name):
         name_encoded = name_match.group(1)
         name = unquote(name_encoded)
 
-        # 尝试从title属性获取名称（更准确）
+        # 从title属性获取名称（更准确）
         title = link.get('title', '')
         if title and len(title) <= 10:
             name = title
@@ -259,93 +244,26 @@ def extract_evolution_chain(soup, current_pokemon_name):
         if not name or len(name) > 15:
             continue
 
-        # 查找进化等级：检查链接后面的文本
-        level_text = ''
+        if name not in seen:
+            seen.add(name)
+            evolution_chain.append(name)
 
-        # 获取链接后面的所有文本（直到下一个链接或段落结束）
-        next_elements = []
-        sibling = link.find_next_sibling()
-        while sibling:
-            if sibling.name == 'a':  # 遇到下一个链接就停止
-                break
-            # 获取文本内容
-            text = sibling.get_text(strip=True)
-            if text:
-                next_elements.append(text)
-            sibling = sibling.find_next_sibling()
-
-        # 在后续文本中查找等级数字
-        combined_text = ' '.join(next_elements)
-        if combined_text:
-            # 查找独立的数字
-            level_match = re.search(r'(?<!\d)(\d{1,3})(?!\d)', combined_text)
-            if level_match:
-                num = int(level_match.group(1))
-                if 1 <= num <= 100:
-                    level_text = level_match.group(1)
-
-        # 检查是否是当前精灵
-        stage_type = 'unknown'
-        if name == current_pokemon_name:
-            stage_type = 'current'
-        elif len(collected_stages) == 0:
-            stage_type = 'first'
-        else:
-            stage_type = 'later'
-
-        collected_stages.append({
-            'name': name,
-            'url': 'https://wiki.biligame.com/rocom/' + name_encoded,
-            'level': level_text,
-            'stage': stage_type
-        })
-
-    # 方法2: 如果方法1失败，使用正则从进化链容器文本提取
-    if not collected_stages:
+    # 如果方法1失败，使用正则从进化链容器文本提取
+    if not evolution_chain:
+        seen = set()  # 重置seen用于备用方法
         box_text = evolution_box.get_text()
-
-        # 匹配所有 /rocom/精灵名 模式
         href_pattern = r'/rocom/([^\s\)"\']+)'
         href_matches = re.findall(href_pattern, box_text)
 
-        prev_pos = -1
         for href_match in href_matches:
             if any(kw in href_match for kw in ['Special', '文件', 'File', 'index.php', '精灵图鉴', '首页']):
                 continue
-
             name = unquote(href_match)
             if not name or len(name) > 15:
                 continue
-
-            # 查找这个精灵后面的等级数字
-            level_text = ''
-            pos = box_text.find('/rocom/' + href_match, prev_pos + 1)
-            if pos != -1:
-                # 查找后续150字符内是否有数字
-                search_range = 150
-                end_pos = min(pos + search_range, len(box_text))
-                nearby_text = box_text[pos:end_pos]
-
-                level_match = re.search(r'(?<!\d)(\d{1,3})(?!\d)', nearby_text)
-                if level_match:
-                    num = int(level_match.group(1))
-                    if 1 <= num <= 100:
-                        level_text = level_match.group(1)
-
-            collected_stages.append({
-                'name': name,
-                'url': 'https://wiki.biligame.com/rocom/' + href_match,
-                'level': level_text,
-                'stage': 'unknown'
-            })
-            prev_pos = pos
-
-    # 去重并保持顺序
-    seen = set()
-    for stage in collected_stages:
-        if stage['name'] not in seen:
-            seen.add(stage['name'])
-            evolution_chain.append(stage)
+            if name not in seen:
+                seen.add(name)
+                evolution_chain.append(name)
 
     return evolution_chain
 
@@ -520,17 +438,9 @@ def main():
             attrs = ','.join(p.get('attributes', []))
             stats = p.get('base_stats', {})
 
-            # 格式化进化链
+            # 格式化进化链（现在直接是名字列表）
             evo_chain = p.get('evolution_chain', [])
-            evo_str = ''
-            if evo_chain:
-                evo_parts = []
-                for evo in evo_chain:
-                    if evo.get('level'):
-                        evo_parts.append(f"{evo['name']}(Lv{evo['level']})")
-                    else:
-                        evo_parts.append(evo['name'])
-                evo_str = ' → '.join(evo_parts)
+            evo_str = ' → '.join(evo_chain) if evo_chain else ''
 
             writer.writerow([
                 p.get('name', ''),
@@ -584,16 +494,10 @@ def main():
             for ps in p['passive_skills'][:2]:
                 print(f"    └ 特性: {ps.get('name', '未知')} - {ps.get('description', '')[:50]}")
 
-        # 显示进化链
+        # 显示进化链（现在直接是名字列表）
         evo_chain = p.get('evolution_chain', [])
         if evo_chain:
-            evo_parts = []
-            for evo in evo_chain:
-                if evo.get('level'):
-                    evo_parts.append(f"{evo['name']}(Lv{evo['level']})")
-                else:
-                    evo_parts.append(evo['name'])
-            print(f"  进化链: {' → '.join(evo_parts)}")
+            print(f"  进化链: {' → '.join(evo_chain)}")
 
     print("\n" + "=" * 60)
     print("爬取完成!")
