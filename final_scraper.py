@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 洛克王国精灵数据爬虫 - 修复版（修正名称+去掉编号）
-修复：被动技能（特性）+ 进化链爬取
+修复：被动技能（特性）+ 进化链爬取（支持图片+链接格式）+ 种族值总和 + 无技能跳过
 """
 import json
 import re
@@ -197,7 +197,18 @@ def extract_passive_skill(soup):
 
 
 def extract_evolution_chain(soup, current_pokemon_name):
-    """从页面中提取进化链信息"""
+    """从页面中提取进化链信息 - 修正版：支持图片+链接格式
+
+    页面结构示例:
+    进化链
+    <div>
+        <a href="/rocom/喵喵"><img/></a>
+        <span>16</span>
+        <a href="/rocom/喵呜"><img/></a>
+        <span>32</span>
+        <a href="/rocom/魔力猫"><img/></a>
+    </div>
+    """
     evolution_chain = []
 
     # 查找"进化链"标题区域
@@ -213,85 +224,133 @@ def extract_evolution_chain(soup, current_pokemon_name):
     if not evolution_section:
         return evolution_chain
 
-    # 提取进化链中的精灵
-    # 格式: [精灵链接] 等级
-    next_elem = evolution_section.find_next_sibling()
+    # 收集进化链区域的所有内容
+    chain_elements = []
+    current = evolution_section.find_next_sibling()
+    stop_tags = ['h2', 'h3', 'h4', 'h5']
 
-    # 查找所有精灵链接（在进化链区域内）
-    current = evolution_section
+    while current and len(chain_elements) < 30:
+        if current.name in stop_tags:
+            break
+        chain_elements.append(current)
+        current = current.find_next_sibling()
+
     collected_stages = []
 
-    while current and len(collected_stages) < 10:  # 限制最多10个阶段
-        current = current.find_next_sibling()
-        if not current:
-            break
-
-        # 检查是否到达下一个主要区域
-        if current.name in ['h2', 'h3']:
-            break
-
-        # 查找链接
-        links = current.find_all('a', href=lambda x: x and '/rocom/' in x)
+    for elem in chain_elements:
+        # 查找所有 /rocom/ 链接（在进化链区域内）
+        links = elem.find_all('a', href=lambda x: x and '/rocom/' in x and 'Special:' not in x and '文件' not in x)
         for link in links:
             href = link.get('href', '')
-            name = link.get_text(strip=True)
 
-            # 过滤掉非精灵链接
-            if name and len(name) <= 10 and not any(kw in href for kw in ['Special:', '文件:', 'File:']):
-                # 获取进化等级（通常是链接前后的文本）
-                level_text = ''
+            # 过滤非精灵链接
+            if any(kw in href for kw in ['Special:', '文件:', 'File:', 'index.php', 'WP:', 'wp']):
+                continue
+
+            # 从href中提取精灵名称
+            name_match = re.search(r'/rocom/([^/\?#&]+)', href)
+            if not name_match:
+                continue
+
+            name_encoded = name_match.group(1)
+            name = unquote(name_encoded)
+
+            # 跳过空名称或太长的名称
+            if not name or len(name) > 15:
+                continue
+
+            # 查找进化等级：检查链接的下一个兄弟元素
+            level_text = ''
+
+            # 方法1: 查找下一个兄弟元素中的等级数字
+            next_sibling = link.find_next_sibling()
+            if next_sibling:
+                sibling_text = next_sibling.get_text(strip=True)
+                # 检查是否是纯数字（进化等级）
+                if sibling_text.isdigit():
+                    num = int(sibling_text)
+                    if 1 <= num <= 100:
+                        level_text = sibling_text
+
+            # 如果没找到，尝试检查父元素的文本
+            if not level_text:
                 parent = link.parent
                 if parent:
-                    # 检查相邻的文本节点
                     parent_text = parent.get_text()
-                    level_match = re.search(r'(\d+)\s*$|^\s*(\d+)', parent_text.replace(name, ''))
+                    # 在父元素文本中查找数字（排除链接本身）
+                    # 移除链接文本
+                    link_text_in_parent = link.get_text()
+                    if link_text_in_parent:
+                        search_text = parent_text.replace(link_text_in_parent, '')
+                    else:
+                        # 链接文本为空（只有图片），从href提取名称
+                        search_text = parent_text.replace(name, '')
+
+                    # 查找数字
+                    level_match = re.search(r'(?<!\d)(\d{1,3})(?!\d)', search_text)
                     if level_match:
-                        level_text = level_match.group(1) or level_match.group(2)
+                        num = int(level_match.group(1))
+                        if 1 <= num <= 100:
+                            level_text = level_match.group(1)
 
-                # 检查是否是当前精灵的进化阶段
-                stage_type = 'unknown'
-                if name == current_pokemon_name:
-                    stage_type = 'current'
-                elif len(collected_stages) == 0:
-                    stage_type = 'first'
-                else:
-                    stage_type = 'later'
+            # 检查是否是当前精灵
+            stage_type = 'unknown'
+            if name == current_pokemon_name:
+                stage_type = 'current'
+            elif len(collected_stages) == 0:
+                stage_type = 'first'
+            else:
+                stage_type = 'later'
 
-                collected_stages.append({
-                    'name': name,
-                    'url': 'https://wiki.biligame.com' + href if not href.startswith('http') else href,
-                    'level': level_text,
-                    'stage': stage_type
-                })
+            collected_stages.append({
+                'name': name,
+                'url': 'https://wiki.biligame.com/rocom/' + name_encoded,
+                'level': level_text,
+                'stage': stage_type
+            })
 
-    # 如果没找到，尝试更通用的方法
+    # 方法2: 如果还没找到，使用正则从页面文本提取（兜底方案）
     if not collected_stages:
-        # 在进化链区域查找所有精灵名称
-        chain_text = ''
-        elem = evolution_section
-        for _ in range(20):  # 收集后续20个元素
-            elem = elem.find_next_sibling()
-            if not elem:
-                break
-            if elem.name in ['h2', 'h3']:
-                break
-            chain_text += elem.get_text() + '\n'
+        chain_text = '\n'.join(elem.get_text() for elem in chain_elements)
 
-        # 提取精灵名称模式
-        name_pattern = r'/rocom/([^\s"\']+)'
-        names = re.findall(name_pattern, chain_text)
+        # 匹配 /rocom/精灵名 模式
+        href_pattern = r'/rocom/([^\s\)\("\']+)'
+        href_matches = re.findall(href_pattern, chain_text)
 
-        for name in names:
-            name = unquote(name)
-            if name and len(name) <= 10:
-                collected_stages.append({
-                    'name': name,
-                    'url': f'https://wiki.biligame.com/rocom/{name}',
-                    'level': '',
-                    'stage': 'unknown'
-                })
+        prev_pos = -1
+        for href_match in href_matches:
+            if any(kw in href_match for kw in ['Special', '文件', 'File', 'index.php']):
+                continue
 
-    # 去重
+            name = unquote(href_match)
+            if not name or len(name) > 15:
+                continue
+
+            # 查找这个精灵后面的等级数字
+            level_text = ''
+            pos = chain_text.find('/rocom/' + href_match, prev_pos + 1)
+            if pos != -1:
+                # 查找后续100字符内是否有数字
+                search_range = 150
+                end_pos = min(pos + search_range, len(chain_text))
+                nearby_text = chain_text[pos:end_pos]
+
+                # 查找连续的数字
+                level_match = re.search(r'(?<!\d)(\d{1,3})(?!\d)', nearby_text)
+                if level_match:
+                    num = int(level_match.group(1))
+                    if 1 <= num <= 100:
+                        level_text = level_match.group(1)
+
+            collected_stages.append({
+                'name': name,
+                'url': 'https://wiki.biligame.com/rocom/' + href_match,
+                'level': level_text,
+                'stage': 'unknown'
+            })
+            prev_pos = pos
+
+    # 去重并保持顺序
     seen = set()
     for stage in collected_stages:
         if stage['name'] not in seen:
@@ -398,6 +457,11 @@ def parse_pokemon_detail(html, fallback_name=''):
     # 提取进化链
     pokemon['evolution_chain'] = extract_evolution_chain(soup, current_name)
 
+    # 计算种族值总和
+    stats = pokemon['base_stats']
+    stat_sum = sum(v for v in stats.values() if isinstance(v, (int, float)) and v > 0)
+    pokemon['total_stats'] = stat_sum
+
     return pokemon
 
 
@@ -421,12 +485,23 @@ def main():
 
     print("\n[步骤2] 开始爬取精灵详情...")
     all_pokemon = []
+    skipped_count = 0
     for i, pokemon_info in enumerate(pokemon_list):
         print(f"  正在爬取 {i + 1}/{len(pokemon_list)}: {pokemon_info['name']}...")
         html = get_page(pokemon_info['url'])
         if html:
             pokemon = parse_pokemon_detail(html, fallback_name=pokemon_info['name'])
             pokemon['url'] = pokemon_info['url']
+
+            # 功能1: 如果技能为空则跳过本精灵
+            has_spirit_skills = bool(pokemon.get('spirit_skills'))
+            has_skill_stones = bool(pokemon.get('skill_stones'))
+
+            if not has_spirit_skills and not has_skill_stones:
+                print(f"    [跳过] 精灵 '{pokemon_info['name']}' 无技能数据")
+                skipped_count += 1
+                continue
+
             all_pokemon.append(pokemon)
         else:
             all_pokemon.append({
@@ -436,18 +511,20 @@ def main():
             })
         time.sleep(2)
 
+    print(f"\n  已跳过 {skipped_count} 个无技能的精灵")
+
     print("\n[步骤3] 保存数据...")
     json_path = 'output/all_pokemon.json'
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(all_pokemon, f, ensure_ascii=False, indent=2)
     print(f"JSON已保存: {json_path}")
 
-    # CSV表头：新增进化链列
+    # CSV表头：新增种族值总和列
     csv_path = 'output/all_pokemon.csv'
     with open(csv_path, 'w', encoding='utf-8-sig', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(
-            ['名称', '属性', 'HP', '物攻', '魔攻', '物防', '魔防', '速度',
+            ['名称', '属性', 'HP', '物攻', '魔攻', '物防', '魔防', '速度', '种族值总和',
              '精灵技能数', '可学技能石数', '被动技能数', '进化链', 'URL'])
         for p in all_pokemon:
             attrs = ','.join(p.get('attributes', []))
@@ -474,6 +551,7 @@ def main():
                 stats.get('物防', ''),
                 stats.get('魔防', ''),
                 stats.get('速度', ''),
+                p.get('total_stats', ''),  # 功能2: 种族值总和
                 len(p.get('spirit_skills', [])),
                 len(p.get('skill_stones', [])),
                 len(p.get('passive_skills', [])),
@@ -504,8 +582,9 @@ def main():
         print(f"  属性: {','.join(p.get('attributes', []))}")
         stats = p.get('base_stats', {})
         if any(stats.values()):
+            total = p.get('total_stats', '')
             print(
-                f"  种族值: HP{stats.get('HP', '')} 物攻{stats.get('物攻', '')} 魔攻{stats.get('魔攻', '')} 物防{stats.get('物防', '')} 魔防{stats.get('魔防', '')} 速度{stats.get('速度', '')}")
+                f"  种族值: HP{stats.get('HP', '')} 物攻{stats.get('物攻', '')} 魔攻{stats.get('魔攻', '')} 物防{stats.get('物防', '')} 魔防{stats.get('魔防', '')} 速度{stats.get('速度', '')} (总和: {total})")
         print(f"  精灵技能: {len(p.get('spirit_skills', []))} 个")
         print(f"  可学技能石: {len(p.get('skill_stones', []))} 个")
         print(f"  被动技能: {len(p.get('passive_skills', []))} 个")
