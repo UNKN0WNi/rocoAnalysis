@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 洛克王国精灵数据爬虫 - 修复版（修正名称+去掉编号）
+修复：被动技能（特性）+ 进化链爬取
 """
 import json
 import re
@@ -52,10 +53,10 @@ def extract_links_from_file():
         match = re.match(pattern, line)
         if match:
             name_encoded = match.group(1)
-            # 🔧 修正：从URL解码获取准确名称
+            # 修正：从URL解码获取准确名称
             name = unquote(name_encoded)
             links.append({
-                'name': name,  # 去掉 'no' 字段
+                'name': name,
                 'url': line
             })
     print(f"正则匹配到 {len(links)} 个链接")
@@ -97,79 +98,223 @@ def extract_skills(tab):
     return skills
 
 
-def extract_passive_skills(tab):
-    """从tab中提取被动技能"""
-    skills = []
-    # 尝试查找被动技能容器 - 可能使用不同的class名称
-    containers = tab.find_all('div', class_=lambda x: x and ('passive' in str(x).lower() or '被动' in str(x)))
+def extract_passive_skill(soup):
+    """从页面中提取被动技能/特性 - 修复版"""
+    passive_skills = []
 
-    # 如果没找到，尝试查找所有技能相关的box
-    if not containers:
-        containers = tab.find_all('div', class_='rocom_sprite_skill_box')
+    # 方法1: 查找"特性"标签区域（这是BWIKI的格式）
+    # 特性通常在页面主内容区，以"特性"作为标题
+    page_text = soup.get_text()
 
-    for box in containers:
-        skill = {
-            'name': '',
-            'description': '',
-            'effect': ''
-        }
-        # 尝试多种可能的选择器
-        name_div = box.find('div', class_=lambda x: x and ('skillName' in str(x) or 'passive' in str(x).lower() or 'name' in str(x).lower()) if x else False)
-        if name_div:
-            skill['name'] = name_div.get_text(strip=True)
+    # 在页面中查找"特性"相关的文本模式
+    # 格式：特性 + 特性名 + 描述
 
-        # 尝试查找描述
-        content_div = box.find('div', class_=lambda x: x and ('skillContent' in str(x) or 'description' in str(x).lower() or 'desc' in str(x).lower()) if x else False)
-        if content_div:
-            desc = content_div.get_text(strip=True)
-            skill['description'] = desc.lstrip('✦').strip()
+    # 查找所有包含"特性"的h2/h3/h4标题
+    headers = soup.find_all(['h2', 'h3', 'h4', 'h5'])
+    for header in headers:
+        header_text = header.get_text(strip=True)
+        if '特性' in header_text:
+            # 找到了特性区域，获取其后的内容
+            next_elem = header.find_next_sibling()
+            if next_elem:
+                # 尝试提取特性名称和描述
+                content = next_elem.get_text(strip=True)
+                # 匹配特性名称模式：图片 + 名称 + 描述
+                # 或者直接匹配"名称 + 描述"的模式
+                lines = content.split('\n')
+                current_name = ''
+                current_desc = []
 
-        # 尝试查找效果字段
-        effect_div = box.find('div', class_=lambda x: x and ('effect' in str(x).lower() or '效果' in str(x)) if x else False)
-        if effect_div:
-            skill['effect'] = effect_div.get_text(strip=True)
+                for line in lines:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    # 检查是否是特性名称（通常在两行之间或特定格式中）
+                    # BWIKI特性格式: 特性图标 + 特性名称 + 特性描述
+                    # 例如: 盲拧 + 回合开始时，技能顺序打乱，4号位的技能能耗-4。
 
-        # 如果找到名称，添加到列表
-        if skill['name']:
-            skills.append(skill)
+                    # 如果行以特定名称开头或包含特性名
+                    if line and not line.startswith('✦') and not line.startswith('特性'):
+                        # 这可能是特性名称
+                        if len(line) <= 20 and not any(c in line for c in '，。、：；！？'):
+                            current_name = line
+                        elif current_name:
+                            # 这是描述
+                            desc = line.lstrip('✦').strip()
+                            if desc:
+                                passive_skills.append({
+                                    'name': current_name,
+                                    'description': desc,
+                                    'effect': ''
+                                })
+                                current_name = ''
 
-    # 如果还是没有找到，尝试更通用的提取方式
-    if not skills:
-        # 查找所有包含技能信息的div
-        all_divs = tab.find_all('div')
-        for div in all_divs:
-            text = div.get_text(strip=True)
-            # 检查是否包含被动技能相关的关键词
-            if '被动' in text or 'Passive' in text:
-                # 尝试提取名称 - 通常在标题或第一个子元素中
-                name_elem = div.find(['h3', 'h4', 'span', 'strong'], class_=lambda x: x and ('name' in str(x).lower() or 'title' in str(x).lower()) if x else False)
-                if name_elem:
-                    name = name_elem.get_text(strip=True)
-                    if name and len(name) <= 20:
-                        desc = div.get_text(strip=True)
-                        # 移除名称部分，保留描述
-                        desc = desc.replace(name, '').strip()
-                        skills.append({
-                            'name': name,
-                            'description': desc
-                        })
+    # 方法2: 直接在页面文本中搜索特性模式
+    if not passive_skills:
+        # 搜索类似 "特性\n名称\n描述" 的模式
+        pattern = r'特性\s*\n\s*([^\n]{1,15})\s*\n\s*([^\n]{10,200})'
+        matches = re.findall(pattern, page_text)
+        for name, desc in matches:
+            name = name.strip()
+            desc = desc.strip()
+            if name and len(name) <= 15 and desc:
+                passive_skills.append({
+                    'name': name,
+                    'description': desc,
+                    'effect': ''
+                })
 
-    return skills
+    # 方法3: 更宽松的匹配
+    if not passive_skills:
+        # 匹配 "特性名称 + 描述" 的模式
+        # 例如：盲拧 回合开始时，技能顺序打乱
+        lines = page_text.split('\n')
+        for i, line in enumerate(lines):
+            line = line.strip()
+            if line and len(line) <= 15 and not line.startswith('✦'):
+                # 检查下一行是否是描述
+                if i + 1 < len(lines):
+                    next_line = lines[i + 1].strip()
+                    if next_line and ('时' in next_line or '获得' in next_line or '每' in next_line):
+                        if len(next_line) > 10:
+                            passive_skills.append({
+                                'name': line,
+                                'description': next_line,
+                                'effect': ''
+                            })
+                            break
+
+    # 去重
+    seen = set()
+    unique = []
+    for ps in passive_skills:
+        key = ps['name']
+        if key not in seen:
+            seen.add(key)
+            unique.append(ps)
+
+    return unique
+
+
+def extract_evolution_chain(soup, current_pokemon_name):
+    """从页面中提取进化链信息"""
+    evolution_chain = []
+
+    # 查找"进化链"标题区域
+    headers = soup.find_all(['h2', 'h3', 'h4', 'h5'])
+    evolution_section = None
+
+    for header in headers:
+        header_text = header.get_text(strip=True)
+        if '进化链' in header_text:
+            evolution_section = header
+            break
+
+    if not evolution_section:
+        return evolution_chain
+
+    # 提取进化链中的精灵
+    # 格式: [精灵链接] 等级
+    next_elem = evolution_section.find_next_sibling()
+
+    # 查找所有精灵链接（在进化链区域内）
+    current = evolution_section
+    collected_stages = []
+
+    while current and len(collected_stages) < 10:  # 限制最多10个阶段
+        current = current.find_next_sibling()
+        if not current:
+            break
+
+        # 检查是否到达下一个主要区域
+        if current.name in ['h2', 'h3']:
+            break
+
+        # 查找链接
+        links = current.find_all('a', href=lambda x: x and '/rocom/' in x)
+        for link in links:
+            href = link.get('href', '')
+            name = link.get_text(strip=True)
+
+            # 过滤掉非精灵链接
+            if name and len(name) <= 10 and not any(kw in href for kw in ['Special:', '文件:', 'File:']):
+                # 获取进化等级（通常是链接前后的文本）
+                level_text = ''
+                parent = link.parent
+                if parent:
+                    # 检查相邻的文本节点
+                    parent_text = parent.get_text()
+                    level_match = re.search(r'(\d+)\s*$|^\s*(\d+)', parent_text.replace(name, ''))
+                    if level_match:
+                        level_text = level_match.group(1) or level_match.group(2)
+
+                # 检查是否是当前精灵的进化阶段
+                stage_type = 'unknown'
+                if name == current_pokemon_name:
+                    stage_type = 'current'
+                elif len(collected_stages) == 0:
+                    stage_type = 'first'
+                else:
+                    stage_type = 'later'
+
+                collected_stages.append({
+                    'name': name,
+                    'url': 'https://wiki.biligame.com' + href if not href.startswith('http') else href,
+                    'level': level_text,
+                    'stage': stage_type
+                })
+
+    # 如果没找到，尝试更通用的方法
+    if not collected_stages:
+        # 在进化链区域查找所有精灵名称
+        chain_text = ''
+        elem = evolution_section
+        for _ in range(20):  # 收集后续20个元素
+            elem = elem.find_next_sibling()
+            if not elem:
+                break
+            if elem.name in ['h2', 'h3']:
+                break
+            chain_text += elem.get_text() + '\n'
+
+        # 提取精灵名称模式
+        name_pattern = r'/rocom/([^\s"\']+)'
+        names = re.findall(name_pattern, chain_text)
+
+        for name in names:
+            name = unquote(name)
+            if name and len(name) <= 10:
+                collected_stages.append({
+                    'name': name,
+                    'url': f'https://wiki.biligame.com/rocom/{name}',
+                    'level': '',
+                    'stage': 'unknown'
+                })
+
+    # 去重
+    seen = set()
+    for stage in collected_stages:
+        if stage['name'] not in seen:
+            seen.add(stage['name'])
+            evolution_chain.append(stage)
+
+    return evolution_chain
 
 
 def parse_pokemon_detail(html, fallback_name=''):
-    """解析单个精灵页面 - 🔧 修正名称提取 + 添加被动技能"""
+    """解析单个精灵页面 - 修复版：特性 + 进化链"""
     soup = BeautifulSoup(html, 'html.parser')
     pokemon = {
-        'name': '',  # 🔧 去掉 'no' 字段
+        'name': '',
         'attributes': [],
         'base_stats': {},
         'spirit_skills': [],
         'skill_stones': [],
-        'passive_skills': []  # 🔧 新增：被动技能
+        'passive_skills': [],  # 被动技能/特性
+        'evolution_chain': []  # 进化链
     }
 
-    # 🔧 修正：名称提取逻辑
+    # 名称提取逻辑
     title = soup.find('h1', id='firstHeading')
     if title:
         title_text = title.get_text(strip=True)
@@ -177,14 +322,16 @@ def parse_pokemon_detail(html, fallback_name=''):
         title_text = re.sub(r'^NO\.\d+\s*', '', title_text)  # 移除 "NO.123 "
         title_text = re.sub(r'\s*\(.*?\)', '', title_text)  # 移除 "（洛克王国）"
         title_text = re.sub(r'\s*-\s*.*$', '', title_text)  # 移除 " - 百科"
-        if title_text and len(title_text) <= 10:  # 合理名称长度过滤
+        if title_text and len(title_text) <= 10:
             pokemon['name'] = title_text.strip()
 
     # 备用：如果标题提取失败，使用URL解码的名称
     if not pokemon['name'] and fallback_name:
         pokemon['name'] = fallback_name
 
-    # 提取属性（保持修复后的逻辑）
+    current_name = pokemon['name'] or fallback_name
+
+    # 提取属性
     attr_container = soup.find('div', class_='rocom_sprite_grament_attributes')
     if attr_container:
         for img in attr_container.find_all('img'):
@@ -211,7 +358,7 @@ def parse_pokemon_detail(html, fallback_name=''):
                     if len(pokemon['attributes']) >= 2:
                         break
 
-    # 提取种族值（保持修复后的逻辑）
+    # 提取种族值
     STAT_MAPPING = {
         '生命': 'HP', 'HP': 'HP', '物攻': '物攻', '攻击': '物攻',
         '魔攻': '魔攻', '特攻': '魔攻', '物防': '物防', '防御': '物防',
@@ -242,13 +389,14 @@ def parse_pokemon_detail(html, fallback_name=''):
         tab_title = tab.get('title', '')
         if '精灵技能' in tab_title:
             pokemon['spirit_skills'] = extract_skills(tab)
-        # 🔧 新增：提取被动技能
-        if '被动' in tab_title or '被动技能' in tab_title or 'Passive' in tab_title:
-            passive = extract_passive_skills(tab)
-            if passive:
-                pokemon['passive_skills'].extend(passive)
         if '可学技能石' in tab_title or '可学习' in tab_title:
             pokemon['skill_stones'] = extract_skills(tab)
+
+    # 提取被动技能/特性
+    pokemon['passive_skills'] = extract_passive_skill(soup)
+
+    # 提取进化链
+    pokemon['evolution_chain'] = extract_evolution_chain(soup, current_name)
 
     return pokemon
 
@@ -277,7 +425,6 @@ def main():
         print(f"  正在爬取 {i + 1}/{len(pokemon_list)}: {pokemon_info['name']}...")
         html = get_page(pokemon_info['url'])
         if html:
-            # 🔧 传入fallback_name备用
             pokemon = parse_pokemon_detail(html, fallback_name=pokemon_info['name'])
             pokemon['url'] = pokemon_info['url']
             all_pokemon.append(pokemon)
@@ -295,17 +442,31 @@ def main():
         json.dump(all_pokemon, f, ensure_ascii=False, indent=2)
     print(f"JSON已保存: {json_path}")
 
-    # 🔧 CSV表头去掉"编号" + 新增被动技能列
+    # CSV表头：新增进化链列
     csv_path = 'output/all_pokemon.csv'
     with open(csv_path, 'w', encoding='utf-8-sig', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(
-            ['名称', '属性', 'HP', '物攻', '魔攻', '物防', '魔防', '速度', '精灵技能数', '可学技能石数', '被动技能数', 'URL'])
+            ['名称', '属性', 'HP', '物攻', '魔攻', '物防', '魔防', '速度',
+             '精灵技能数', '可学技能石数', '被动技能数', '进化链', 'URL'])
         for p in all_pokemon:
             attrs = ','.join(p.get('attributes', []))
             stats = p.get('base_stats', {})
+
+            # 格式化进化链
+            evo_chain = p.get('evolution_chain', [])
+            evo_str = ''
+            if evo_chain:
+                evo_parts = []
+                for evo in evo_chain:
+                    if evo.get('level'):
+                        evo_parts.append(f"{evo['name']}(Lv{evo['level']})")
+                    else:
+                        evo_parts.append(evo['name'])
+                evo_str = ' → '.join(evo_parts)
+
             writer.writerow([
-                p.get('name', ''),  # 🔧 去掉 no 字段
+                p.get('name', ''),
                 attrs,
                 stats.get('HP', ''),
                 stats.get('物攻', ''),
@@ -315,7 +476,8 @@ def main():
                 stats.get('速度', ''),
                 len(p.get('spirit_skills', [])),
                 len(p.get('skill_stones', [])),
-                len(p.get('passive_skills', [])),  # 🔧 新增：被动技能数
+                len(p.get('passive_skills', [])),
+                evo_str,
                 p.get('url', '')
             ])
     print(f"CSV已保存: {csv_path}")
@@ -326,16 +488,18 @@ def main():
     success = [p for p in all_pokemon if 'error' not in p]
     with_skills = [p for p in success if p.get('spirit_skills')]
     with_stones = [p for p in success if p.get('skill_stones')]
-    with_passive = [p for p in success if p.get('passive_skills')]  # 🔧 新增：被动技能统计
+    with_passive = [p for p in success if p.get('passive_skills')]
+    with_evo = [p for p in success if p.get('evolution_chain')]
     print(f"成功爬取: {len(success)}/{len(all_pokemon)} 个")
     print(f"有精灵技能: {len(with_skills)} 个")
     print(f"有可学技能石: {len(with_stones)} 个")
-    print(f"有被动技能: {len(with_passive)} 个")  # 🔧 新增
+    print(f"有被动技能: {len(with_passive)} 个")
+    print(f"有进化链: {len(with_evo)} 个")
 
     print("\n" + "=" * 60)
     print("数据预览:")
     print("=" * 60)
-    for p in success[:3]:
+    for p in success[:5]:
         print(f"\n【{p['name']}】")
         print(f"  属性: {','.join(p.get('attributes', []))}")
         stats = p.get('base_stats', {})
@@ -344,11 +508,24 @@ def main():
                 f"  种族值: HP{stats.get('HP', '')} 物攻{stats.get('物攻', '')} 魔攻{stats.get('魔攻', '')} 物防{stats.get('物防', '')} 魔防{stats.get('魔防', '')} 速度{stats.get('速度', '')}")
         print(f"  精灵技能: {len(p.get('spirit_skills', []))} 个")
         print(f"  可学技能石: {len(p.get('skill_stones', []))} 个")
-        print(f"  被动技能: {len(p.get('passive_skills', []))} 个")  # 🔧 新增
-        # 🔧 新增：显示被动技能详情
+        print(f"  被动技能: {len(p.get('passive_skills', []))} 个")
+
+        # 显示被动技能详情
         if p.get('passive_skills'):
-            for ps in p['passive_skills'][:2]:  # 最多显示2个
-                print(f"    - {ps.get('name', '未知')}: {ps.get('description', '')[:50]}...")
+            for ps in p['passive_skills'][:2]:
+                print(f"    └ 特性: {ps.get('name', '未知')} - {ps.get('description', '')[:50]}")
+
+        # 显示进化链
+        evo_chain = p.get('evolution_chain', [])
+        if evo_chain:
+            evo_parts = []
+            for evo in evo_chain:
+                if evo.get('level'):
+                    evo_parts.append(f"{evo['name']}(Lv{evo['level']})")
+                else:
+                    evo_parts.append(evo['name'])
+            print(f"  进化链: {' → '.join(evo_parts)}")
+
     print("\n" + "=" * 60)
     print("爬取完成!")
 
