@@ -36,7 +36,7 @@ def get_page(url, retry=3):
 def extract_links_from_file():
     """从已保存的文件中提取精灵链接"""
     print("正在从已保存内容中提取精灵列表...")
-    file_path = r'C:\Users\Administrator\Desktop\rocoAnalysis\elf_list.txt'
+    file_path = 'elf_list.txt'
     if not os.path.exists(file_path):
         print("文件不存在!")
         return []
@@ -97,15 +97,76 @@ def extract_skills(tab):
     return skills
 
 
+def extract_passive_skills(tab):
+    """从tab中提取被动技能"""
+    skills = []
+    # 尝试查找被动技能容器 - 可能使用不同的class名称
+    containers = tab.find_all('div', class_=lambda x: x and ('passive' in str(x).lower() or '被动' in str(x)))
+
+    # 如果没找到，尝试查找所有技能相关的box
+    if not containers:
+        containers = tab.find_all('div', class_='rocom_sprite_skill_box')
+
+    for box in containers:
+        skill = {
+            'name': '',
+            'description': '',
+            'effect': ''
+        }
+        # 尝试多种可能的选择器
+        name_div = box.find('div', class_=lambda x: x and ('skillName' in str(x) or 'passive' in str(x).lower() or 'name' in str(x).lower()) if x else False)
+        if name_div:
+            skill['name'] = name_div.get_text(strip=True)
+
+        # 尝试查找描述
+        content_div = box.find('div', class_=lambda x: x and ('skillContent' in str(x) or 'description' in str(x).lower() or 'desc' in str(x).lower()) if x else False)
+        if content_div:
+            desc = content_div.get_text(strip=True)
+            skill['description'] = desc.lstrip('✦').strip()
+
+        # 尝试查找效果字段
+        effect_div = box.find('div', class_=lambda x: x and ('effect' in str(x).lower() or '效果' in str(x)) if x else False)
+        if effect_div:
+            skill['effect'] = effect_div.get_text(strip=True)
+
+        # 如果找到名称，添加到列表
+        if skill['name']:
+            skills.append(skill)
+
+    # 如果还是没有找到，尝试更通用的提取方式
+    if not skills:
+        # 查找所有包含技能信息的div
+        all_divs = tab.find_all('div')
+        for div in all_divs:
+            text = div.get_text(strip=True)
+            # 检查是否包含被动技能相关的关键词
+            if '被动' in text or 'Passive' in text:
+                # 尝试提取名称 - 通常在标题或第一个子元素中
+                name_elem = div.find(['h3', 'h4', 'span', 'strong'], class_=lambda x: x and ('name' in str(x).lower() or 'title' in str(x).lower()) if x else False)
+                if name_elem:
+                    name = name_elem.get_text(strip=True)
+                    if name and len(name) <= 20:
+                        desc = div.get_text(strip=True)
+                        # 移除名称部分，保留描述
+                        desc = desc.replace(name, '').strip()
+                        skills.append({
+                            'name': name,
+                            'description': desc
+                        })
+
+    return skills
+
+
 def parse_pokemon_detail(html, fallback_name=''):
-    """解析单个精灵页面 - 🔧 修正名称提取"""
+    """解析单个精灵页面 - 🔧 修正名称提取 + 添加被动技能"""
     soup = BeautifulSoup(html, 'html.parser')
     pokemon = {
         'name': '',  # 🔧 去掉 'no' 字段
         'attributes': [],
         'base_stats': {},
         'spirit_skills': [],
-        'skill_stones': []
+        'skill_stones': [],
+        'passive_skills': []  # 🔧 新增：被动技能
     }
 
     # 🔧 修正：名称提取逻辑
@@ -181,6 +242,11 @@ def parse_pokemon_detail(html, fallback_name=''):
         tab_title = tab.get('title', '')
         if '精灵技能' in tab_title:
             pokemon['spirit_skills'] = extract_skills(tab)
+        # 🔧 新增：提取被动技能
+        if '被动' in tab_title or '被动技能' in tab_title or 'Passive' in tab_title:
+            passive = extract_passive_skills(tab)
+            if passive:
+                pokemon['passive_skills'].extend(passive)
         if '可学技能石' in tab_title or '可学习' in tab_title:
             pokemon['skill_stones'] = extract_skills(tab)
 
@@ -229,12 +295,12 @@ def main():
         json.dump(all_pokemon, f, ensure_ascii=False, indent=2)
     print(f"JSON已保存: {json_path}")
 
-    # 🔧 CSV表头去掉"编号"
+    # 🔧 CSV表头去掉"编号" + 新增被动技能列
     csv_path = 'output/all_pokemon.csv'
     with open(csv_path, 'w', encoding='utf-8-sig', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(
-            ['名称', '属性', 'HP', '物攻', '魔攻', '物防', '魔防', '速度', '精灵技能数', '可学技能石数', 'URL'])
+            ['名称', '属性', 'HP', '物攻', '魔攻', '物防', '魔防', '速度', '精灵技能数', '可学技能石数', '被动技能数', 'URL'])
         for p in all_pokemon:
             attrs = ','.join(p.get('attributes', []))
             stats = p.get('base_stats', {})
@@ -249,6 +315,7 @@ def main():
                 stats.get('速度', ''),
                 len(p.get('spirit_skills', [])),
                 len(p.get('skill_stones', [])),
+                len(p.get('passive_skills', [])),  # 🔧 新增：被动技能数
                 p.get('url', '')
             ])
     print(f"CSV已保存: {csv_path}")
@@ -259,9 +326,11 @@ def main():
     success = [p for p in all_pokemon if 'error' not in p]
     with_skills = [p for p in success if p.get('spirit_skills')]
     with_stones = [p for p in success if p.get('skill_stones')]
+    with_passive = [p for p in success if p.get('passive_skills')]  # 🔧 新增：被动技能统计
     print(f"成功爬取: {len(success)}/{len(all_pokemon)} 个")
     print(f"有精灵技能: {len(with_skills)} 个")
     print(f"有可学技能石: {len(with_stones)} 个")
+    print(f"有被动技能: {len(with_passive)} 个")  # 🔧 新增
 
     print("\n" + "=" * 60)
     print("数据预览:")
@@ -275,6 +344,11 @@ def main():
                 f"  种族值: HP{stats.get('HP', '')} 物攻{stats.get('物攻', '')} 魔攻{stats.get('魔攻', '')} 物防{stats.get('物防', '')} 魔防{stats.get('魔防', '')} 速度{stats.get('速度', '')}")
         print(f"  精灵技能: {len(p.get('spirit_skills', []))} 个")
         print(f"  可学技能石: {len(p.get('skill_stones', []))} 个")
+        print(f"  被动技能: {len(p.get('passive_skills', []))} 个")  # 🔧 新增
+        # 🔧 新增：显示被动技能详情
+        if p.get('passive_skills'):
+            for ps in p['passive_skills'][:2]:  # 最多显示2个
+                print(f"    - {ps.get('name', '未知')}: {ps.get('description', '')[:50]}...")
     print("\n" + "=" * 60)
     print("爬取完成!")
 

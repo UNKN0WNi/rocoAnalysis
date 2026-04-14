@@ -272,6 +272,7 @@
         "description": "造成物伤，物防比敌方越高，本次技能威力越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/圣剑骑士",
     "base_stats_sum": 920
   },
@@ -548,6 +549,7 @@
         "description": "造成物伤，物防比敌方越高，本次技能威力越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/圣剑-X",
     "base_stats_sum": 868
   },
@@ -816,6 +818,7 @@
         "description": "减伤60%，应对攻击：本回合受到致命伤害时，保留1生命值。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/鳗尾兽",
     "base_stats_sum": 788
   },
@@ -1093,6 +1096,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/迷迷箱怪",
     "base_stats_sum": 782
   },
@@ -1385,6 +1389,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/棋契陛下",
     "base_stats_sum": 761
   },
@@ -1613,6 +1618,7 @@
         "description": "敌方获得1层降灵印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/雪巨人",
     "base_stats_sum": 718
   },
@@ -1873,6 +1879,7 @@
         "description": "造成物伤，物防比敌方越高，本次技能威力越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/火焰猿",
     "base_stats_sum": 715
   },
@@ -2118,6 +2125,7 @@
         "description": "敌方获得1层降灵印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/迷嶂布莱克",
     "base_stats_sum": 704
   },
@@ -2346,6 +2354,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/黑猫密探",
     "base_stats_sum": 701
   },
@@ -2622,6 +2631,7 @@
         "description": "造成物伤，物防比敌方越高，本次技能威力越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/圣剑侍从",
     "base_stats_sum": 696
   },
@@ -2914,6 +2924,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/圣羽翼王",
     "base_stats_sum": 686
   },
@@ -3198,6 +3209,7 @@
         "description": "减伤60%，应对攻击：自己获得物攻和魔攻+40%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/奇丽果",
     "base_stats_sum": 686
   },
@@ -3451,6 +3463,7 @@
         "description": "敌方获得速度-90。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/瞌睡王",
     "base_stats_sum": 685
   },
@@ -3719,6 +3732,7 @@
         "description": "减伤80%，应对攻击：自己获得全技能威力+40。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/奇梦咪",
     "base_stats_sum": 684
   },
@@ -3964,6 +3978,7 @@
         "description": "敌方获得1层降灵印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/布克棱岩",
     "base_stats_sum": 683
   },
@@ -4192,6 +4207,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/烈火战神",
     "base_stats_sum": 672
   },
@@ -4420,6 +4436,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/圣水守护",
     "base_stats_sum": 667
   },
@@ -4689,6 +4706,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/龙鱼",
     "base_stats_sum": 667
   },
@@ -4926,6 +4944,7 @@
         "description": "造成大量物伤，自己获得物攻-50%，应对状态：改为获得物攻+50%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/恶魔红钻",
     "base_stats_sum": 666
   },
@@ -5154,6 +5173,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/黑猫巫师",
     "base_stats_sum": 662
   },
@@ -5439,6 +5459,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/绅士鸡",
     "base_stats_sum": 661
   },
@@ -5716,6 +5737,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/古卷执政官",
     "base_stats_sum": 658
   },
@@ -5977,6 +5999,7 @@
         "description": "减伤70%，应对攻击：本技能变为被应对的技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/翠顶夫人",
     "base_stats_sum": 656
   },
@@ -6253,6 +6276,7 @@
         "description": "自己获得魔攻+90%，若敌方本回合更换精灵，自己获得速度+70。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/权杖-V",
     "base_stats_sum": 652
   },
@@ -6529,6 +6553,7 @@
         "description": "敌方获得速度-90。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/权杖-Ⅴ",
     "base_stats_sum": 652
   },
@@ -6805,6 +6830,7 @@
         "description": "自己回复30%生命。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/黑羽夫人",
     "base_stats_sum": 652
   },
@@ -7033,6 +7059,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/伊兰亚龙",
     "base_stats_sum": 651
   },
@@ -7261,6 +7288,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/伊兰龙",
     "base_stats_sum": 651
   },
@@ -7537,6 +7565,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/怒目怂猫",
     "base_stats_sum": 651
   },
@@ -7814,6 +7843,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/古卷匣魔像",
     "base_stats_sum": 650
   },
@@ -8091,6 +8121,7 @@
         "description": "敌方获得1层冻结，且每有1层冻结获得全技能能耗+1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/雪影冰灵",
     "base_stats_sum": 650
   },
@@ -8359,6 +8390,7 @@
         "description": "蓄力，造成物伤并吸血50%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/公平鸽",
     "base_stats_sum": 649
   },
@@ -8635,6 +8667,7 @@
         "description": "造成物伤，每次使用后，本技能能耗永久+1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/叶冕魔力猫",
     "base_stats_sum": 649
   },
@@ -8854,6 +8887,7 @@
       }
     ],
     "skill_stones": [],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/格斗小六",
     "base_stats_sum": 646
   },
@@ -9123,6 +9157,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/闪电鳗鱼",
     "base_stats_sum": 646
   },
@@ -9399,6 +9434,7 @@
         "description": "自己获得1层风起印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/里拉鳐",
     "base_stats_sum": 644
   },
@@ -9667,6 +9703,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/彩虹独角兽",
     "base_stats_sum": 643
   },
@@ -9943,6 +9980,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/雪灵",
     "base_stats_sum": 643
   },
@@ -10171,6 +10209,7 @@
         "description": "造成魔伤，敌方获得2层中毒。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/粉耳星兔",
     "base_stats_sum": 642
   },
@@ -10440,6 +10479,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/蒲公英娃娃",
     "base_stats_sum": 642
   },
@@ -10708,6 +10748,7 @@
         "description": "减伤80%，应对攻击：自己获得全技能威力+40。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/梦想三三",
     "base_stats_sum": 641
   },
@@ -10984,6 +11025,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/祭礼巨像",
     "base_stats_sum": 641
   },
@@ -11229,6 +11271,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/贝古斯",
     "base_stats_sum": 641
   },
@@ -11457,6 +11500,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/雅丹鬃",
     "base_stats_sum": 639
   },
@@ -11741,6 +11785,7 @@
         "description": "减伤60%，应对攻击：自己获得物攻和魔攻+40%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/奇丽花",
     "base_stats_sum": 638
   },
@@ -11977,6 +12022,7 @@
         "description": "减伤80%，应对攻击：自己获得魔防+70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/落陨星兔",
     "base_stats_sum": 637
   },
@@ -12245,6 +12291,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/嗜波螺",
     "base_stats_sum": 634
   },
@@ -12490,6 +12537,7 @@
         "description": "自己获得物防+140%和速度-30。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/针叶巡林",
     "base_stats_sum": 634
   },
@@ -12759,6 +12807,7 @@
         "description": "蓄力，自己获得双攻+100%和速度+60。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/白发路路",
     "base_stats_sum": 633
   },
@@ -13012,6 +13061,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/龙息帕尔",
     "base_stats_sum": 632
   },
@@ -13281,6 +13331,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/咔咔鸟",
     "base_stats_sum": 631
   },
@@ -13550,6 +13601,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/游蛇魔使",
     "base_stats_sum": 630
   },
@@ -13818,6 +13870,7 @@
         "description": "减伤60%，应对攻击：本回合受到致命伤害时，保留1生命值。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/花怨鳗",
     "base_stats_sum": 630
   },
@@ -14086,6 +14139,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/九幽菇",
     "base_stats_sum": 627
   },
@@ -14323,6 +14377,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/利灯鱼",
     "base_stats_sum": 626
   },
@@ -14600,6 +14655,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小箱怪",
     "base_stats_sum": 625
   },
@@ -14869,6 +14925,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/朔夜伊芙",
     "base_stats_sum": 624
   },
@@ -15097,6 +15154,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/乌拉塔（极夜的样子）",
     "base_stats_sum": 622
   },
@@ -15373,6 +15431,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/幻影灵菇",
     "base_stats_sum": 621
   },
@@ -15601,6 +15660,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/水灵",
     "base_stats_sum": 621
   },
@@ -15878,6 +15938,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/卡洛儿",
     "base_stats_sum": 619
   },
@@ -16179,6 +16240,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/画间法师手",
     "base_stats_sum": 619
   },
@@ -16448,6 +16510,7 @@
         "description": "蓄力，造成物伤并吸血50%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/噼啪鸟",
     "base_stats_sum": 618
   },
@@ -16677,6 +16740,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小皮球",
     "base_stats_sum": 618
   },
@@ -16945,6 +17009,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/斑枭",
     "base_stats_sum": 617
   },
@@ -17213,6 +17278,7 @@
         "description": "造成魔伤，2连击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/星光狮（星光能量的样子）",
     "base_stats_sum": 617
   },
@@ -17490,6 +17556,7 @@
         "description": "敌方获得1层冻结，且每有1层冻结获得全技能能耗+1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/雪影娃娃",
     "base_stats_sum": 617
   },
@@ -17766,6 +17833,7 @@
         "description": "造成魔伤，2连击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/影狸",
     "base_stats_sum": 616
   },
@@ -17994,6 +18062,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/火神",
     "base_stats_sum": 613
   },
@@ -18270,6 +18339,7 @@
         "description": "造成物伤，每次使用后，本技能能耗永久+1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/魔力猫",
     "base_stats_sum": 613
   },
@@ -18546,6 +18616,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/圣代甜甜",
     "base_stats_sum": 612
   },
@@ -18774,6 +18845,7 @@
         "description": "敌方和自己均脱离，先手-1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/疾光千兽",
     "base_stats_sum": 612
   },
@@ -19050,6 +19122,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/仪式巨像",
     "base_stats_sum": 610
   },
@@ -19294,6 +19367,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/海枝枝（碧蓝珊瑚）",
     "base_stats_sum": 610
   },
@@ -19579,6 +19653,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/月亮砣（上弦的样子）",
     "base_stats_sum": 609
   },
@@ -19888,6 +19963,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/画间沉铁兽",
     "base_stats_sum": 608
   },
@@ -20149,6 +20225,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/记忆石",
     "base_stats_sum": 607
   },
@@ -20377,6 +20454,7 @@
         "description": "敌方先手-1，应对防御：额外使敌方获得双攻-70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/立方人",
     "base_stats_sum": 605
   },
@@ -20605,6 +20683,7 @@
         "description": "自己获得魔攻+70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/绒光优优",
     "base_stats_sum": 605
   },
@@ -20816,6 +20895,7 @@
       }
     ],
     "skill_stones": [],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/格斗小八",
     "base_stats_sum": 604
   },
@@ -21084,6 +21164,7 @@
         "description": "减伤60%，应对攻击：本回合受到致命伤害时，保留1生命值。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/秩序鱿墨",
     "base_stats_sum": 604
   },
@@ -21352,6 +21433,7 @@
         "description": "自己获得魔攻+70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/幻影荆棘",
     "base_stats_sum": 603
   },
@@ -21579,6 +21661,7 @@
       }
     ],
     "skill_stones": [],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/格斗小五",
     "base_stats_sum": 602
   },
@@ -21824,6 +21907,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/罗隐",
     "base_stats_sum": 601
   },
@@ -22093,6 +22177,7 @@
         "description": "减伤70%，应对攻击：回复能量，回复值等于被应对技能能耗的2倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/海豹船长",
     "base_stats_sum": 600
   },
@@ -22330,6 +22415,7 @@
         "description": "自己获得魔攻+70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/红绒十字",
     "base_stats_sum": 598
   },
@@ -22583,6 +22669,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/炽心勇狮",
     "base_stats_sum": 597
   },
@@ -22852,6 +22939,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/卷胡巨獭",
     "base_stats_sum": 595
   },
@@ -23120,6 +23208,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/白金独角兽",
     "base_stats_sum": 595
   },
@@ -23348,6 +23437,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/水泡壳（本来的样子）",
     "base_stats_sum": 594
   },
@@ -23585,6 +23675,7 @@
         "description": "自己获得100%吸血。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/幽冥眼（闭眼的样子）",
     "base_stats_sum": 592
   },
@@ -23869,6 +23960,7 @@
         "description": "与敌方交换携带的技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/窃光蚊",
     "base_stats_sum": 592
   },
@@ -24113,6 +24205,7 @@
         "description": "敌方获得2层减速印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/霜翼领主",
     "base_stats_sum": 592
   },
@@ -24350,6 +24443,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/魔草巫灵",
     "base_stats_sum": 592
   },
@@ -24626,6 +24720,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/古啦多",
     "base_stats_sum": 591
   },
@@ -24862,6 +24957,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/深蓝鲸",
     "base_stats_sum": 588
   },
@@ -25091,6 +25187,7 @@
         "description": "造成物伤，物防比敌方越高，本次技能威力越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/月牙雪熊",
     "base_stats_sum": 586
   },
@@ -25360,6 +25457,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/巨灵石",
     "base_stats_sum": 584
   },
@@ -25636,6 +25734,7 @@
         "description": "造成伤害，敌方获得连击数-3。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/晶石蜗（火山琉璃的样子）",
     "base_stats_sum": 583
   },
@@ -25873,6 +25972,7 @@
         "description": "自己获得魔攻+70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/电企鹅",
     "base_stats_sum": 583
   },
@@ -26141,6 +26241,7 @@
         "description": "造成魔伤，1连击，应对状态：本技能变为3连击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/酷拉",
     "base_stats_sum": 583
   },
@@ -26370,6 +26471,7 @@
         "description": "与敌方交换携带的技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/花影羚羊",
     "base_stats_sum": 582
   },
@@ -26662,6 +26764,7 @@
         "description": "造成物伤，应对状态：本次技能威力变为4倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/迪莫",
     "base_stats_sum": 582
   },
@@ -26939,6 +27042,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/尖嘴狐仙",
     "base_stats_sum": 580
   },
@@ -27176,6 +27280,7 @@
         "description": "造成魔伤，自己脱离。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/武者鸡",
     "base_stats_sum": 580
   },
@@ -27405,6 +27510,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/琉璃水母",
     "base_stats_sum": 580
   },
@@ -27634,6 +27740,7 @@
         "description": "自己获得1层风起印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/彩蝶鲨",
     "base_stats_sum": 579
   },
@@ -27863,6 +27970,7 @@
         "description": "造成魔伤，2连击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/梦悠悠（穿旧睡衣的样子）",
     "base_stats_sum": 579
   },
@@ -28100,6 +28208,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/燃薪虫",
     "base_stats_sum": 579
   },
@@ -28336,6 +28445,7 @@
         "description": "自己获得物防+140%和速度-30。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/獠牙猪",
     "base_stats_sum": 579
   },
@@ -28565,6 +28675,7 @@
         "description": "自己获得1层风起印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/神谕鲨",
     "base_stats_sum": 579
   },
@@ -28834,6 +28945,7 @@
         "description": "敌方获得2层星陨印记，每使用1次，赋予的星陨印记层数+1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/混乱鱿彩",
     "base_stats_sum": 576
   },
@@ -29119,6 +29231,7 @@
         "description": "自己获得物攻+80%，应对防御：额外使敌方获得物防-80%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/蹦蹦花（彩玉球形态）",
     "base_stats_sum": 576
   },
@@ -29356,6 +29469,7 @@
         "description": "造成物伤，己方队伍获得1次奉献：威力+20。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/食尘短绒",
     "base_stats_sum": 576
   },
@@ -29584,6 +29698,7 @@
         "description": "自己获得魔攻+70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/圆号鱼",
     "base_stats_sum": 575
   },
@@ -29812,6 +29927,7 @@
         "description": "敌方获得1层降灵印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/雪蛮人",
     "base_stats_sum": 574
   },
@@ -30048,6 +30164,7 @@
         "description": "主动：本技能被动额外-1能耗，被动：两侧技能能耗-1，传动1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/嘟嘟锅",
     "base_stats_sum": 573
   },
@@ -30276,6 +30393,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/波多西",
     "base_stats_sum": 573
   },
@@ -30536,6 +30654,7 @@
         "description": "造成物伤，物防比敌方越高，本次技能威力越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/炽热猿",
     "base_stats_sum": 572
   },
@@ -30797,6 +30916,7 @@
         "description": "减伤60%，应对攻击：自己获得物攻和魔攻+40%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/石冠王蜥（本来的样子）",
     "base_stats_sum": 572
   },
@@ -31065,6 +31185,7 @@
         "description": "自己获得魔攻+70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/幽影树",
     "base_stats_sum": 571
   },
@@ -31309,6 +31430,7 @@
         "description": "敌方获得2层减速印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/岚鸟（本来的样子）",
     "base_stats_sum": 570
   },
@@ -31585,6 +31707,7 @@
         "description": "造成伤害，敌方获得连击数-3。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/钻石蜗",
     "base_stats_sum": 570
   },
@@ -31821,6 +31944,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/泥吼牙",
     "base_stats_sum": 569
   },
@@ -32097,6 +32221,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/绒仙子",
     "base_stats_sum": 569
   },
@@ -32333,6 +32458,7 @@
         "description": "迅捷，驱散敌方1种增益。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/鸭吉吉国王",
     "base_stats_sum": 569
   },
@@ -32577,6 +32703,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/声波缇塔",
     "base_stats_sum": 568
   },
@@ -32845,6 +32972,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/伊贝粉粉",
     "base_stats_sum": 566
   },
@@ -33082,6 +33210,7 @@
         "description": "造成物伤，己方队伍获得1次奉献：威力+20。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/捕尘长绒",
     "base_stats_sum": 565
   },
@@ -33318,6 +33447,7 @@
         "description": "敌方获得物防和魔防-120%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/烈火守护",
     "base_stats_sum": 564
   },
@@ -33579,6 +33709,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/熔岩布丁",
     "base_stats_sum": 564
   },
@@ -33808,6 +33939,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/流浪鼠",
     "base_stats_sum": 563
   },
@@ -34037,6 +34169,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/千棘海针",
     "base_stats_sum": 562
   },
@@ -34273,6 +34406,7 @@
         "description": "驱散敌方印记，每层印记回复自己10%生命。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/巨噬针鼹",
     "base_stats_sum": 562
   },
@@ -34534,6 +34668,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/椰浆布丁",
     "base_stats_sum": 562
   },
@@ -34762,6 +34897,7 @@
         "description": "敌方先手-1，应对防御：额外使敌方获得双攻-70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/音速犬",
     "base_stats_sum": 562
   },
@@ -34990,6 +35126,7 @@
         "description": "敌方先手-1，应对防御：额外使敌方获得双攻-70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/风暴战犬",
     "base_stats_sum": 562
   },
@@ -35235,6 +35372,7 @@
         "description": "蓄力，造成物伤并吸血50%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/恶魔狼王",
     "base_stats_sum": 560
   },
@@ -35527,6 +35665,7 @@
         "description": "若敌方本回合回复生命，改为失去2倍。先手+1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/寒音蛇",
     "base_stats_sum": 558
   },
@@ -35795,6 +35934,7 @@
         "description": "自己获得物攻+80%，应对防御：额外使敌方获得物防-80%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/春花兔",
     "base_stats_sum": 557
   },
@@ -36079,6 +36219,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/荆棘电环",
     "base_stats_sum": 557
   },
@@ -36347,6 +36488,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/蹦床松鼠",
     "base_stats_sum": 555
   },
@@ -36575,6 +36717,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/上岸蛙",
     "base_stats_sum": 554
   },
@@ -36811,6 +36954,7 @@
         "description": "敌方获得物防和魔防-120%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/皇家狮鹫（高山地的样子）",
     "base_stats_sum": 554
   },
@@ -37071,6 +37215,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/电球咩咩",
     "base_stats_sum": 553
   },
@@ -37316,6 +37461,7 @@
         "description": "造成物伤，己方队伍获得1次奉献：威力+20。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/遁地鼠（储水期的样子）",
     "base_stats_sum": 553
   },
@@ -37544,6 +37690,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/寂灭骨龙",
     "base_stats_sum": 552
   },
@@ -37781,6 +37928,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/魔眷鸟",
     "base_stats_sum": 551
   },
@@ -38026,6 +38174,7 @@
         "description": "蓄力，造成物伤并吸血50%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/恶魔狼",
     "base_stats_sum": 548
   },
@@ -38279,6 +38428,7 @@
         "description": "敌方获得速度-90。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/动力猿",
     "base_stats_sum": 547
   },
@@ -38587,6 +38737,7 @@
         "description": "自己获得物攻+80%，应对防御：额外使敌方获得物防-80%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/棋祈督（白子）",
     "base_stats_sum": 547
   },
@@ -38879,6 +39030,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/灵羽勇士",
     "base_stats_sum": 547
   },
@@ -39124,6 +39276,7 @@
         "description": "敌方获得1层降灵印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/布是岩",
     "base_stats_sum": 546
   },
@@ -39385,6 +39538,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/抹茶布丁",
     "base_stats_sum": 546
   },
@@ -39614,6 +39768,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/千棘盔（本来的样子）",
     "base_stats_sum": 545
   },
@@ -39906,6 +40061,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/棋骑士（白子）",
     "base_stats_sum": 543
   },
@@ -40134,6 +40290,7 @@
         "description": "造成物伤，己方队伍获得1次奉献：威力+20。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/风滚暮虫（金黄的样子）",
     "base_stats_sum": 542
   },
@@ -40419,6 +40576,7 @@
         "description": "自己获得物攻+80%，应对防御：额外使敌方获得物防-80%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/蹦蹦果",
     "base_stats_sum": 540
   },
@@ -40687,6 +40845,7 @@
         "description": "驱散敌方印记，每层印记回复自己10%生命。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/花衣蝶",
     "base_stats_sum": 539
   },
@@ -40915,6 +41074,7 @@
         "description": "造成魔伤，敌方每有1层中毒效果，本次技能威力+10，应对状态：改为本次威力+20。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/格兰球",
     "base_stats_sum": 536
   },
@@ -41143,6 +41303,7 @@
         "description": "敌方获得1层降灵印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/叮叮恶魔",
     "base_stats_sum": 535
   },
@@ -41412,6 +41573,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/快鳍鱼",
     "base_stats_sum": 534
   },
@@ -41696,6 +41858,7 @@
         "description": "将天气改为雨天，持续8回合。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/高脚鹬",
     "base_stats_sum": 534
   },
@@ -41925,6 +42088,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/暮星辰",
     "base_stats_sum": 532
   },
@@ -42169,6 +42333,7 @@
         "description": "造成伤害，敌方获得连击数-3。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/波普鹿",
     "base_stats_sum": 532
   },
@@ -42413,6 +42578,7 @@
         "description": "造成伤害，敌方获得连击数-3。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/爵士鹿",
     "base_stats_sum": 532
   },
@@ -42650,6 +42816,7 @@
         "description": "造成大量物伤，自己获得物攻-50%，应对状态：改为获得物攻+50%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/矮脚爬爬",
     "base_stats_sum": 532
   },
@@ -42838,6 +43005,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/晕晕鸡",
     "base_stats_sum": 530
   },
@@ -43066,6 +43234,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小黑猫",
     "base_stats_sum": 528
   },
@@ -43647,6 +43816,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/星云旅者",
     "base_stats_sum": 528
   },
@@ -43867,6 +44037,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/书卷守护",
     "base_stats_sum": 527
   },
@@ -44048,6 +44219,7 @@
         "description": "减伤60%，应对攻击：自己获得物攻和魔攻+40%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/蓝珠天鹅",
     "base_stats_sum": 525
   },
@@ -44284,6 +44456,7 @@
         "description": "造成魔伤，1连击，应对状态：本技能变为3连击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/菊花梨",
     "base_stats_sum": 523
   },
@@ -44560,6 +44733,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小怂猫",
     "base_stats_sum": 522
   },
@@ -44836,6 +45010,7 @@
         "description": "敌方获得速度-90。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/权杖-Ⅱ",
     "base_stats_sum": 522
   },
@@ -45065,6 +45240,7 @@
         "description": "敌方和自己均脱离，先手-1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/铠甲虫",
     "base_stats_sum": 522
   },
@@ -45293,6 +45469,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/伊雷龙",
     "base_stats_sum": 521
   },
@@ -45561,6 +45738,7 @@
         "description": "造成物伤，自己回复1能量。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/裘卡",
     "base_stats_sum": 520
   },
@@ -45830,6 +46008,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/胆小鳗鱼",
     "base_stats_sum": 517
   },
@@ -46106,6 +46285,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/冰封怨灵",
     "base_stats_sum": 515
   },
@@ -46375,6 +46555,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/蒲公英",
     "base_stats_sum": 515
   },
@@ -46539,6 +46720,7 @@
         "description": "敌方获得全技能能耗+1，应对防御：改为能耗+3。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/粉星仔",
     "base_stats_sum": 514
   },
@@ -46816,6 +46998,7 @@
         "description": "迅捷，驱散敌方1种增益。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/兽花蕾",
     "base_stats_sum": 513
   },
@@ -47045,6 +47228,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/翼龙",
     "base_stats_sum": 513
   },
@@ -47290,6 +47474,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/贝加尔",
     "base_stats_sum": 512
   },
@@ -47574,6 +47759,7 @@
         "description": "减伤60%，应对攻击：自己获得物攻和魔攻+40%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/奇丽叶",
     "base_stats_sum": 511
   },
@@ -47842,6 +48028,7 @@
         "description": "减伤80%，应对攻击：自己获得全技能威力+40。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/气球猫",
     "base_stats_sum": 511
   },
@@ -48070,6 +48257,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/火红尾",
     "base_stats_sum": 511
   },
@@ -48339,6 +48527,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/锤头鹳",
     "base_stats_sum": 511
   },
@@ -48616,6 +48805,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/陨星虫",
     "base_stats_sum": 509
   },
@@ -48932,6 +49122,7 @@
         "description": "造成物伤，物防比敌方越高，本次技能威力越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/棋绮后（白子）",
     "base_stats_sum": 508
   },
@@ -49185,6 +49376,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/帕尔萨斯",
     "base_stats_sum": 507
   },
@@ -49430,6 +49622,7 @@
         "description": "自己获得物防+140%和速度-30。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/松叶羊",
     "base_stats_sum": 507
   },
@@ -49699,6 +49892,7 @@
         "description": "蓄力，自己获得双攻+100%和速度+60。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/舞动路路",
     "base_stats_sum": 507
   },
@@ -49967,6 +50161,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/芋香巨角蛛",
     "base_stats_sum": 506
   },
@@ -50236,6 +50431,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/咔咔雀",
     "base_stats_sum": 505
   },
@@ -50505,6 +50701,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/水蛇锁",
     "base_stats_sum": 505
   },
@@ -50773,6 +50970,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/消波螺",
     "base_stats_sum": 505
   },
@@ -51018,6 +51216,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/卷毛鸭",
     "base_stats_sum": 504
   },
@@ -51255,6 +51454,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/双灯鱼",
     "base_stats_sum": 502
   },
@@ -51523,6 +51723,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/多菇丁",
     "base_stats_sum": 501
   },
@@ -51799,6 +52000,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/幻灵菇",
     "base_stats_sum": 499
   },
@@ -52068,6 +52270,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/紫夜",
     "base_stats_sum": 499
   },
@@ -52296,6 +52499,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/迷你乌（极夜的样子）",
     "base_stats_sum": 498
   },
@@ -52524,6 +52728,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/波波拉",
     "base_stats_sum": 497
   },
@@ -52752,6 +52957,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/厉毒修萝",
     "base_stats_sum": 495
   },
@@ -53029,6 +53235,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/壳乙螺",
     "base_stats_sum": 495
   },
@@ -53258,6 +53465,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/粉粉星",
     "base_stats_sum": 495
   },
@@ -53526,6 +53734,7 @@
         "description": "造成魔伤，2连击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小星光（星光能量的样子）",
     "base_stats_sum": 494
   },
@@ -53794,6 +54003,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/斑斑",
     "base_stats_sum": 494
   },
@@ -54030,6 +54240,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/画像守护",
     "base_stats_sum": 494
   },
@@ -54266,6 +54477,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/冰钻布鲁斯",
     "base_stats_sum": 493
   },
@@ -54543,6 +54755,7 @@
         "description": "敌方获得1层冻结，且每有1层冻结获得全技能能耗+1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/帽兜娃娃",
     "base_stats_sum": 493
   },
@@ -54819,6 +55032,7 @@
         "description": "造成魔伤，2连击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/忽幽狸",
     "base_stats_sum": 493
   },
@@ -55095,6 +55309,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/香草甜甜",
     "base_stats_sum": 491
   },
@@ -55323,6 +55538,7 @@
         "description": "敌方和自己均脱离，先手-1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/光纤兽",
     "base_stats_sum": 490
   },
@@ -55599,6 +55815,7 @@
         "description": "造成物伤，每次使用后，本技能能耗永久+1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/喵呜",
     "base_stats_sum": 490
   },
@@ -55827,6 +56044,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/焰火",
     "base_stats_sum": 490
   },
@@ -56111,6 +56329,7 @@
         "description": "减伤80%，应对攻击：自己获得全技能威力+40。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/棋齐垒（白子）",
     "base_stats_sum": 489
   },
@@ -56387,6 +56606,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/仪式之星",
     "base_stats_sum": 488
   },
@@ -56672,6 +56892,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/刺轮砣（上弦的样子）",
     "base_stats_sum": 487
   },
@@ -56900,6 +57121,7 @@
         "description": "自己获得魔攻+70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/优优",
     "base_stats_sum": 485
   },
@@ -57128,6 +57350,7 @@
         "description": "敌方先手-1，应对防御：额外使敌方获得双攻-70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/多彩方方",
     "base_stats_sum": 482
   },
@@ -57397,6 +57620,7 @@
         "description": "减伤70%，应对攻击：回复能量，回复值等于被应对技能能耗的2倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/海豹战士",
     "base_stats_sum": 481
   },
@@ -57642,6 +57866,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/阿米樱",
     "base_stats_sum": 480
   },
@@ -57879,6 +58104,7 @@
         "description": "自己获得魔攻+70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/红丝绒",
     "base_stats_sum": 479
   },
@@ -58132,6 +58358,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/炽焰狮",
     "base_stats_sum": 478
   },
@@ -58401,6 +58628,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/燕尾獭",
     "base_stats_sum": 477
   },
@@ -58669,6 +58897,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小独角兽",
     "base_stats_sum": 476
   },
@@ -58897,6 +59126,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/咔咔壳（本来的样子）",
     "base_stats_sum": 475
   },
@@ -59485,6 +59715,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/机甲小子",
     "base_stats_sum": 475
   },
@@ -59769,6 +60000,7 @@
         "description": "与敌方交换携带的技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/嗜光嗡嗡",
     "base_stats_sum": 473
   },
@@ -60006,6 +60238,7 @@
         "description": "自己获得100%吸血。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/暗影灵面（闭眼的样子）",
     "base_stats_sum": 473
   },
@@ -60243,6 +60476,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/绿草精灵",
     "base_stats_sum": 473
   },
@@ -60519,6 +60753,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/多啦多",
     "base_stats_sum": 472
   },
@@ -60748,6 +60983,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/帕帕斯卡",
     "base_stats_sum": 471
   },
@@ -60984,6 +61220,7 @@
         "description": "迅捷，驱散敌方1种增益。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/鸭吉吉（等一等鸭）",
     "base_stats_sum": 469
   },
@@ -61221,6 +61458,7 @@
         "description": "自己获得魔攻+70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小电企鹅",
     "base_stats_sum": 467
   },
@@ -61489,6 +61727,7 @@
         "description": "造成魔伤，1连击，应对状态：本技能变为3连击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/拉特",
     "base_stats_sum": 467
   },
@@ -61758,6 +61997,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/石石",
     "base_stats_sum": 467
   },
@@ -62026,6 +62266,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/怖哭菇",
     "base_stats_sum": 466
   },
@@ -62262,6 +62503,7 @@
         "description": "造成伤害，敌方获得连击数-3。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/矿晶虫",
     "base_stats_sum": 466
   },
@@ -62491,6 +62733,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/翡翠水母",
     "base_stats_sum": 466
   },
@@ -62720,6 +62963,7 @@
         "description": "与敌方交换携带的技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/铃兰羊",
     "base_stats_sum": 466
   },
@@ -62997,6 +63241,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/九尾狐",
     "base_stats_sum": 465
   },
@@ -63234,6 +63479,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/夜枭",
     "base_stats_sum": 464
   },
@@ -63470,6 +63716,7 @@
         "description": "自己获得物防+140%和速度-30。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/呼呼猪",
     "base_stats_sum": 463
   },
@@ -63707,6 +63954,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/柴渣虫",
     "base_stats_sum": 462
   },
@@ -63936,6 +64184,7 @@
         "description": "造成魔伤，2连击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/梦游（穿旧睡衣的样子）",
     "base_stats_sum": 462
   },
@@ -64165,6 +64414,7 @@
         "description": "自己获得1层风起印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/蓝蝶鲨",
     "base_stats_sum": 462
   },
@@ -64450,6 +64700,7 @@
         "description": "自己获得物攻+80%，应对防御：额外使敌方获得物防-80%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/蹦蹦草（彩玉球形态）",
     "base_stats_sum": 462
   },
@@ -64647,6 +64898,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/墨鱿士",
     "base_stats_sum": 461
   },
@@ -64874,6 +65126,7 @@
       }
     ],
     "skill_stones": [],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/阿布",
     "base_stats_sum": 461
   },
@@ -65102,6 +65355,7 @@
         "description": "自己获得魔攻+70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/号儿鱼",
     "base_stats_sum": 460
   },
@@ -65338,6 +65592,7 @@
         "description": "主动：本技能被动额外-1能耗，被动：两侧技能能耗-1，传动1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/嘟嘟煲",
     "base_stats_sum": 459
   },
@@ -65566,6 +65821,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/库多西",
     "base_stats_sum": 459
   },
@@ -65827,6 +66083,7 @@
         "description": "减伤60%，应对攻击：自己获得物攻和魔攻+40%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/石刺蜥（本来的样子）",
     "base_stats_sum": 458
   },
@@ -66071,6 +66328,7 @@
         "description": "敌方获得2层减速印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/冬羽雀（本来的样子）",
     "base_stats_sum": 456
   },
@@ -66307,6 +66565,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/吸泥鸥",
     "base_stats_sum": 455
   },
@@ -66575,6 +66834,7 @@
         "description": "自己获得物攻+80%，应对防御：额外使敌方获得物防-80%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/春兔",
     "base_stats_sum": 455
   },
@@ -66851,6 +67111,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小绒茧",
     "base_stats_sum": 454
   },
@@ -67095,6 +67356,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/缇塔",
     "base_stats_sum": 454
   },
@@ -67363,6 +67625,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/伊贝儿",
     "base_stats_sum": 453
   },
@@ -67600,6 +67863,7 @@
         "description": "造成物伤，己方队伍获得1次奉献：威力+20。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/毛头小蛛",
     "base_stats_sum": 452
   },
@@ -67829,6 +68093,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/奔波鼠",
     "base_stats_sum": 451
   },
@@ -68057,6 +68322,7 @@
         "description": "敌方先手-1，应对防御：额外使敌方获得双攻-70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/护主犬",
     "base_stats_sum": 451
   },
@@ -68293,6 +68559,7 @@
         "description": "敌方获得物防和魔防-120%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/火尾战士",
     "base_stats_sum": 451
   },
@@ -68529,6 +68796,7 @@
         "description": "驱散敌方印记，每层印记回复自己10%生命。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/贪食鼹",
     "base_stats_sum": 449
   },
@@ -68757,6 +69025,7 @@
         "description": "造成物伤，自己回复1能量。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/卡瓦重（草地附近的样子）",
     "base_stats_sum": 447
   },
@@ -69041,6 +69310,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/刺电环",
     "base_stats_sum": 446
   },
@@ -69333,6 +69603,7 @@
         "description": "若敌方本回合回复生命，改为失去2倍。先手+1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/古钟蛇",
     "base_stats_sum": 446
   },
@@ -69601,6 +69872,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/抱枕松鼠",
     "base_stats_sum": 445
   },
@@ -69837,6 +70109,7 @@
         "description": "敌方获得物防和魔防-120%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/神圣狮鹫（高山地的样子）",
     "base_stats_sum": 443
   },
@@ -70097,6 +70370,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/粉咩咩",
     "base_stats_sum": 443
   },
@@ -70325,6 +70599,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/大头骨龙",
     "base_stats_sum": 442
   },
@@ -70553,6 +70828,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/布瓜蝌",
     "base_stats_sum": 442
   },
@@ -70798,6 +71074,7 @@
         "description": "造成物伤，己方队伍获得1次奉献：威力+20。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/遁鼠（储水期的样子）",
     "base_stats_sum": 442
   },
@@ -71035,6 +71312,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/魔翼鸟",
     "base_stats_sum": 441
   },
@@ -71223,6 +71501,7 @@
         "description": "自己获得魔攻+70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/果冻",
     "base_stats_sum": 437
   },
@@ -71452,6 +71731,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/刺盔虫（本来的样子）",
     "base_stats_sum": 435
   },
@@ -71600,6 +71880,7 @@
         "description": "造成物伤。每次使用后，本技能威力永久+45。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/棋棋（白子）",
     "base_stats_sum": 434
   },
@@ -71828,6 +72109,7 @@
         "description": "造成物伤，己方队伍获得1次奉献：威力+20。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/蓬叶虫（金黄的样子）",
     "base_stats_sum": 433
   },
@@ -72088,6 +72370,7 @@
         "description": "造成物伤，物防比敌方越高，本次技能威力越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/可爱猿",
     "base_stats_sum": 429
   },
@@ -72316,6 +72599,7 @@
         "description": "造成魔伤，敌方每有1层中毒效果，本次技能威力+10，应对状态：改为本次威力+20。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/格兰花",
     "base_stats_sum": 429
   },
@@ -72584,6 +72868,7 @@
         "description": "驱散敌方印记，每层印记回复自己10%生命。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/草衣虫",
     "base_stats_sum": 429
   },
@@ -72868,6 +73153,7 @@
         "description": "将天气改为雨天，持续8回合。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/鄙目鹬",
     "base_stats_sum": 429
   },
@@ -73096,6 +73382,7 @@
         "description": "敌方获得1层降灵印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/雪豆丁",
     "base_stats_sum": 429
   },
@@ -73324,6 +73611,7 @@
         "description": "敌方获得1层降灵印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/恶魔叮",
     "base_stats_sum": 427
   },
@@ -73553,6 +73841,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/曜星光",
     "base_stats_sum": 425
   },
@@ -73797,6 +74086,7 @@
         "description": "造成伤害，敌方获得连击数-3。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/奔乐鹿",
     "base_stats_sum": 424
   },
@@ -74026,6 +74316,7 @@
         "description": "敌方和自己均脱离，先手-1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小甲虫",
     "base_stats_sum": 418
   },
@@ -74294,6 +74585,7 @@
         "description": "造成物伤，自己回复1能量。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/裘力",
     "base_stats_sum": 416
   },
@@ -74586,6 +74878,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/里奥",
     "base_stats_sum": 411
   },
@@ -74838,6 +75131,7 @@
         "description": "敌方获得速度-90。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/白发懒人",
     "base_stats_sum": 410
   },
@@ -75067,6 +75361,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小翼龙",
     "base_stats_sum": 409
   },
@@ -75312,6 +75607,7 @@
         "description": "敌方获得1层降灵印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/布是石",
     "base_stats_sum": 409
   },
@@ -75589,6 +75885,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/落星虫",
     "base_stats_sum": 407
   },
@@ -75857,6 +76154,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/尖角蜘蛛",
     "base_stats_sum": 406
   },
@@ -76101,6 +76399,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/草头鸭",
     "base_stats_sum": 403
   },
@@ -76370,6 +76669,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/豆丁鱼",
     "base_stats_sum": 401
   },
@@ -76598,6 +76898,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/厉毒小萝",
     "base_stats_sum": 396
   },
@@ -76786,6 +77087,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/可立鸡",
     "base_stats_sum": 396
   },
@@ -77006,6 +77308,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/书魔虫",
     "base_stats_sum": 395
   },
@@ -77187,6 +77490,7 @@
         "description": "减伤60%，应对攻击：自己获得物攻和魔攻+40%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/乖乖鹄",
     "base_stats_sum": 394
   },
@@ -77423,6 +77727,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/雪顶布鲁斯",
     "base_stats_sum": 394
   },
@@ -77668,6 +77973,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/贝瑟",
     "base_stats_sum": 385
   },
@@ -77944,6 +78250,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/雪娃娃",
     "base_stats_sum": 385
   },
@@ -78212,6 +78519,7 @@
         "description": "减伤80%，应对攻击：自己获得全技能威力+40。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/逗逗",
     "base_stats_sum": 384
   },
@@ -78496,6 +78804,7 @@
         "description": "减伤60%，应对攻击：自己获得物攻和魔攻+40%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/奇丽草",
     "base_stats_sum": 383
   },
@@ -78780,6 +79089,7 @@
         "description": "造成魔伤，敌方每有1层中毒效果，本次技能威力+10，应对状态：改为本次威力+20。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/花魁蜂后",
     "base_stats_sum": 382
   },
@@ -79368,6 +79678,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/齿轮小子",
     "base_stats_sum": 381
   },
@@ -79637,6 +79948,7 @@
         "description": "蓄力，自己获得双攻+100%和速度+60。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/呆小路",
     "base_stats_sum": 380
   },
@@ -79882,6 +80194,7 @@
         "description": "自己获得物防+140%和速度-30。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/松仔",
     "base_stats_sum": 380
   },
@@ -80150,6 +80463,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/波波螺",
     "base_stats_sum": 380
   },
@@ -80403,6 +80717,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小帕尔",
     "base_stats_sum": 379
   },
@@ -80672,6 +80987,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/咔咔羽毛",
     "base_stats_sum": 378
   },
@@ -80941,6 +81257,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/水滴蛇",
     "base_stats_sum": 378
   },
@@ -81170,6 +81487,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/螺旋帕帕",
     "base_stats_sum": 377
   },
@@ -81438,6 +81756,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/菇菇丁",
     "base_stats_sum": 376
   },
@@ -81666,6 +81985,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/乌达（极夜的样子）",
     "base_stats_sum": 374
   },
@@ -81935,6 +82255,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小夜",
     "base_stats_sum": 374
   },
@@ -82212,6 +82533,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小灵菇",
     "base_stats_sum": 374
   },
@@ -82449,6 +82771,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/夜宿颅",
     "base_stats_sum": 373
   },
@@ -82717,6 +83040,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/怖须菇",
     "base_stats_sum": 372
   },
@@ -82945,6 +83269,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/水蓝蓝",
     "base_stats_sum": 372
   },
@@ -83181,6 +83506,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/画精灵",
     "base_stats_sum": 371
   },
@@ -83457,6 +83783,7 @@
         "description": "造成物伤，每次使用后，本技能能耗永久+1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/喵喵",
     "base_stats_sum": 370
   },
@@ -83734,6 +84061,7 @@
         "description": "敌方获得1层冻结，且每有1层冻结获得全技能能耗+1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/大耳帽兜",
     "base_stats_sum": 370
   },
@@ -84011,6 +84339,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/甜田螺",
     "base_stats_sum": 370
   },
@@ -84239,6 +84568,7 @@
         "description": "造成物伤，迅捷，应对状态：本次技能威力变为1.5倍。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/火花",
     "base_stats_sum": 368
   },
@@ -84467,6 +84797,7 @@
         "description": "敌方和自己均脱离，先手-1。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/犀角鸟",
     "base_stats_sum": 368
   },
@@ -84743,6 +85074,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/脆筒甜甜",
     "base_stats_sum": 368
   },
@@ -85019,6 +85351,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/仪使者",
     "base_stats_sum": 366
   },
@@ -85287,6 +85620,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/化蝶（喵喵的样子）",
     "base_stats_sum": 366
   },
@@ -85524,6 +85858,7 @@
         "description": "造成魔伤，2连击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小灵面",
     "base_stats_sum": 366
   },
@@ -85808,6 +86143,7 @@
         "description": "造成魔伤，敌方每有1层中毒效果，本次技能威力+10，应对状态：改为本次威力+20。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/女王蜂",
     "base_stats_sum": 364
   },
@@ -86036,6 +86372,7 @@
         "description": "敌方先手-1，应对防御：额外使敌方获得双攻-70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/机械方方",
     "base_stats_sum": 362
   },
@@ -86281,6 +86618,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/阿米亚特",
     "base_stats_sum": 360
   },
@@ -86534,6 +86872,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小勇狮",
     "base_stats_sum": 358
   },
@@ -86771,6 +87110,7 @@
         "description": "自己获得魔攻+70%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/治愈兔",
     "base_stats_sum": 358
   },
@@ -86999,6 +87339,7 @@
         "description": "造成物伤，自己回复1能量。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/卡卡虫（草地附近的样子）",
     "base_stats_sum": 357
   },
@@ -87227,6 +87568,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/板板壳（本来的样子）",
     "base_stats_sum": 357
   },
@@ -87503,6 +87845,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/多多",
     "base_stats_sum": 355
   },
@@ -87772,6 +88115,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小鼠獭",
     "base_stats_sum": 355
   },
@@ -88001,6 +88345,7 @@
         "description": "与敌方交换携带的技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/锥尾羊",
     "base_stats_sum": 349
   },
@@ -88278,6 +88623,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/灵狐",
     "base_stats_sum": 347
   },
@@ -88563,6 +88909,7 @@
         "description": "自己获得物攻+80%，应对防御：额外使敌方获得物防-80%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/蹦蹦种子（彩玉球形态）",
     "base_stats_sum": 347
   },
@@ -88792,6 +89139,7 @@
         "description": "自己获得1层风起印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/风铃鲨",
     "base_stats_sum": 347
   },
@@ -89020,6 +89368,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/多西",
     "base_stats_sum": 345
   },
@@ -89281,6 +89630,7 @@
         "description": "减伤60%，应对攻击：自己获得物攻和魔攻+40%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/石肤蜥（本来的样子）",
     "base_stats_sum": 343
   },
@@ -89557,6 +89907,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/绒绒",
     "base_stats_sum": 342
   },
@@ -89801,6 +90152,7 @@
         "description": "敌方获得2层减速印记。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/雪绒鸟（本来的样子）",
     "base_stats_sum": 342
   },
@@ -90069,6 +90421,7 @@
         "description": "自己获得物攻+80%，应对防御：额外使敌方获得物防-80%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/春团",
     "base_stats_sum": 341
   },
@@ -90305,6 +90658,7 @@
         "description": "驱散敌方印记，每层印记回复自己10%生命。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/伏地兽",
     "base_stats_sum": 338
   },
@@ -90541,6 +90895,7 @@
         "description": "敌方获得物防和魔防-120%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/火尾瓦特",
     "base_stats_sum": 338
   },
@@ -90825,6 +91180,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/闪电环",
     "base_stats_sum": 335
   },
@@ -91061,6 +91417,7 @@
         "description": "敌方获得物防和魔防-120%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小狮鹫（高山地的样子）",
     "base_stats_sum": 333
   },
@@ -91329,6 +91686,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/绿耳松鼠",
     "base_stats_sum": 333
   },
@@ -91589,6 +91947,7 @@
         "description": "造成魔伤，使用时消耗所有能量，消耗越高，伤害越高。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/电咩咩",
     "base_stats_sum": 332
   },
@@ -91834,6 +92193,7 @@
         "description": "造成物伤，己方队伍获得1次奉献：威力+20。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/地鼠（储水期的样子）",
     "base_stats_sum": 331
   },
@@ -92071,6 +92431,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/绿翼鸟",
     "base_stats_sum": 330
   },
@@ -92300,6 +92661,7 @@
         "description": "自己获得魔防+170%。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/海盔虫（本来的样子）",
     "base_stats_sum": 327
   },
@@ -92528,6 +92890,7 @@
         "description": "造成物伤，己方队伍获得1次奉献：威力+20。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/旋叶虫（金黄的样子）",
     "base_stats_sum": 326
   },
@@ -92796,6 +93159,7 @@
         "description": "驱散敌方印记，每层印记回复自己10%生命。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小草虫",
     "base_stats_sum": 323
   },
@@ -93024,6 +93388,7 @@
         "description": "造成魔伤，敌方每有1层中毒效果，本次技能威力+10，应对状态：改为本次威力+20。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/格兰种子",
     "base_stats_sum": 321
   },
@@ -93308,6 +93673,7 @@
         "description": "将天气改为雨天，持续8回合。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/小鹬",
     "base_stats_sum": 320
   },
@@ -93536,6 +93902,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/幽星光",
     "base_stats_sum": 319
   },
@@ -93780,6 +94147,7 @@
         "description": "造成伤害，敌方获得连击数-3。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/电动长颈鹿",
     "base_stats_sum": 318
   },
@@ -94048,6 +94416,7 @@
         "description": "造成物伤，自己回复1能量。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/裘洛",
     "base_stats_sum": 312
   },
@@ -94325,6 +94694,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/星尘虫",
     "base_stats_sum": 307
   },
@@ -94594,6 +94964,7 @@
         "description": "减伤70%，应对攻击。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/圆眼蜘蛛",
     "base_stats_sum": 305
   },
@@ -94878,6 +95249,7 @@
         "description": "造成魔伤，敌方每有1层中毒效果，本次技能威力+10，应对状态：改为本次威力+20。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/黄蜂后",
     "base_stats_sum": 305
   },
@@ -95146,6 +95518,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/爬爬",
     "base_stats_sum": 302
   },
@@ -95382,6 +95755,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/布鲁斯",
     "base_stats_sum": 295
   },
@@ -95619,6 +95993,7 @@
         "description": "造成魔伤，应对状态：额外打断被应对技能。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/空空颅",
     "base_stats_sum": 280
   },
@@ -95887,6 +96262,7 @@
         "description": "对敌方精灵造成物理伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/哭哭菇",
     "base_stats_sum": 279
   },
@@ -96115,6 +96491,7 @@
         "description": "造成物伤，自己回复1能量。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/丢丢（草地附近的样子）",
     "base_stats_sum": 268
   },
@@ -96399,6 +96776,7 @@
         "description": "造成魔伤，敌方每有1层中毒效果，本次技能威力+10，应对状态：改为本次威力+20。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/一窝蜂",
     "base_stats_sum": 228
   },
@@ -96667,6 +97045,7 @@
         "description": "对敌方精灵造成魔法伤害。"
       }
     ],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/毛毛",
     "base_stats_sum": 228
   },
@@ -96903,6 +97282,7 @@
       }
     ],
     "skill_stones": [],
+    "passive_skills": [],
     "url": "https://wiki.biligame.com/rocom/千棘海刺",
     "base_stats_sum": 0
   }
